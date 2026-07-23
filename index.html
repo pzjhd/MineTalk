@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#0f0f1a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>MineTalk — 矿业场景英语训练</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+<div id="app">
+  <!-- ===== HEADER BAR ===== -->
+  <header id="header">
+    <div class="header-left">
+      <div class="level-badge" id="levelBadge">1</div>
+      <div class="player-info">
+        <span class="player-name" id="playerName">地质小王</span>
+        <span class="player-title" id="playerTitle">🥾 Rookie</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="xp-mini">
+        <div class="xp-mini-bar"><div class="xp-mini-fill" id="xpMiniFill" style="width:0%"></div></div>
+        <span class="xp-mini-text" id="xpMiniText">0/100</span>
+      </div>
+      <div class="streak-badge" id="streakBadge">
+        <span class="fire">🔥</span><span id="streakCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- TAB 1: Home Dashboard -->
+    <section class="tab-panel active" id="tab-home">
+      <!-- XP Card -->
+      <div class="xp-card">
+        <div class="xp-card-header">
+          <span class="xp-card-title">⚡ 经验值</span>
+          <span class="xp-card-level">Lv.<span id="xpLevel">1</span> → Lv.<span id="xpNextLevel">2</span></span>
+        </div>
+        <div class="xp-bar-large">
+          <div class="xp-bar-fill-large" id="xpBarLarge" style="width:0%"></div>
+        </div>
+        <div class="xp-stats">
+          <span id="xpCurrent">0 XP</span>
+          <span id="xpNeeded">100 XP to next level</span>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-value" id="statScenes">0</div>
+          <div class="stat-label">训练完成</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statMinutes">0</div>
+          <div class="stat-label">训练分钟</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="statBest">--</div>
+          <div class="stat-label">最高评分</div>
+        </div>
+      </div>
+
+      <!-- Daily Challenges -->
+      <div class="daily-challenges">
+        <div class="section-header">
+          <span class="section-title">📋 每日挑战</span>
+          <span class="section-sub" id="dailyProgress">0/3</span>
+        </div>
+        <div id="dailyChallengeList"></div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="section-header">
+        <span class="section-title">🏆 成就</span>
+        <span class="section-sub" id="achieveCount">0/12</span>
+      </div>
+      <div class="achievements-row" id="achievementsRow"></div>
+    </section>
+
+    <!-- TAB 2: Scene Selector -->
+    <section class="tab-panel" id="tab-scenes">
+      <!-- Accent -->
+      <div class="accent-bar">
+        <span>🎙️ 对话口音:</span>
+        <select class="accent-select" id="accentSelect">
+          <option value="en-ZA">🇿🇦 南非英语</option>
+          <option value="en-AU">🇦🇺 澳式英语</option>
+          <option value="en-GB">🇬🇧 英式英语</option>
+          <option value="en-US">🇺🇸 美式英语</option>
+          <option value="en-IN">🇮🇳 印度英语</option>
+        </select>
+      </div>
+
+      <!-- Category Filter -->
+      <div class="category-filters" id="categoryFilters">
+        <button class="cat-filter active" data-cat="all">🎯 全部</button>
+        <button class="cat-filter" data-cat="technical">🔬 技术汇报</button>
+        <button class="cat-filter" data-cat="field">⛏️ 现场指挥</button>
+        <button class="cat-filter" data-cat="social">🍺 日常社交</button>
+        <button class="cat-filter" data-cat="business">📋 商务谈判</button>
+      </div>
+
+      <!-- Scene List -->
+      <div class="scene-list" id="sceneList"></div>
+    </section>
+
+    <!-- TAB 3: Training Interface -->
+    <section class="tab-panel" id="tab-training">
+      <div id="trainingContent">
+        <!-- Start Screen -->
+        <div id="trainingStart">
+          <div class="training-scene-info">
+            <div class="training-character" id="trainAvatar">👨‍🔧</div>
+            <div class="training-char-name" id="trainCharName">选择一个场景开始</div>
+            <div class="training-char-role" id="trainCharRole"></div>
+          </div>
+          <p style="text-align:center;color:var(--text-muted);font-size:13px;" id="trainSelectHint">
+            👆 在「场景」标签页中挑选一个场景，然后回到这里开始训练
+          </p>
+          <div style="text-align:center;margin-top:12px;display:none;" id="trainStartBtnWrap">
+            <button class="btn btn-primary" id="btnStartTraining" style="font-size:16px;padding:14px 40px;">
+              ⛏️ 开始训练！
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Training -->
+        <div id="trainingActive" style="display:none;">
+          <div class="training-scene-info">
+            <div class="training-character" id="trainAvatarActive">👨‍🔧</div>
+            <div class="training-char-name" id="trainCharNameActive"></div>
+            <div class="training-char-role" id="trainCharRoleActive"></div>
+          </div>
+
+          <!-- Round Indicator -->
+          <div class="round-indicator" id="roundIndicator"></div>
+
+          <!-- Chat -->
+          <div class="chat-area" id="chatArea"></div>
+
+          <!-- Hint Words -->
+          <div class="hint-words" id="hintWords"></div>
+
+          <!-- Mic -->
+          <div class="mic-zone">
+            <button class="mic-btn" id="micBtn" title="点击开始说话">🎤</button>
+            <span class="mic-hint" id="micHint">点击麦克风开始说话</span>
+          </div>
+
+          <!-- Manual Input -->
+          <div class="manual-input-row">
+            <input type="text" class="manual-input" id="manualInput" placeholder="或者直接输入文字...">
+            <button class="btn-send" id="btnSend">发送</button>
+          </div>
+
+          <div style="text-align:center;margin-top:10px;">
+            <button class="btn btn-sm btn-secondary" id="btnEndTraining">结束训练</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: Flash Cards -->
+    <section class="tab-panel" id="tab-cards">
+      <div class="card-deck-selector" id="deckSelector"></div>
+      <div class="flash-card-container">
+        <div class="flash-card" id="flashCard">
+          <div class="flash-card-front">
+            <div class="card-zh" id="cardZh">选择一个词汇卡组</div>
+            <div class="card-hint-label">🖐️ 点击翻转</div>
+          </div>
+          <div class="flash-card-back">
+            <div class="card-en" id="cardEn"></div>
+            <div class="card-scene-ref" id="cardSceneRef"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-danger btn-sm" id="btnCardAgain">🔄 再练一次</button>
+        <button class="btn btn-primary btn-sm" id="btnCardMastered">✅ 已掌握</button>
+      </div>
+      <div class="card-progress" id="cardProgress">1 / 1</div>
+      <div class="review-queue" id="reviewQueue" style="display:none;">
+        <div class="review-queue-title">📝 待复习 (<span id="reviewCount">0</span>)</div>
+        <div id="reviewList"></div>
+      </div>
+    </section>
+
+    <!-- TAB 5: Settings -->
+    <section class="tab-panel" id="tab-settings">
+      <div class="settings-group">
+        <div class="settings-group-title">🔌 API 设置</div>
+        <div class="form-group">
+          <label class="form-label">DeepSeek API Key</label>
+          <input type="password" class="form-input" id="apiKeyInput" placeholder="sk-...">
+          <div class="form-hint">
+            密钥仅保存在你的浏览器中，不会上传到任何服务器。
+            <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:var(--info);">获取 Key →</a>
+          </div>
+          <div class="api-status" id="apiStatus"></div>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">👤 个人信息</div>
+        <div class="form-group">
+          <label class="form-label">昵称</label>
+          <input type="text" class="form-input" id="nicknameInput" placeholder="地质小王" maxlength="20">
+        </div>
+        <div class="form-group">
+          <label class="form-label">默认口音</label>
+          <select class="form-input" id="defaultAccentSelect">
+            <option value="en-ZA">🇿🇦 南非英语</option>
+            <option value="en-AU">🇦🇺 澳式英语</option>
+            <option value="en-GB">🇬🇧 英式英语</option>
+            <option value="en-US">🇺🇸 美式英语</option>
+            <option value="en-IN">🇮🇳 印度英语</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">辅助模式</label>
+          <select class="form-input" id="hintModeSelect">
+            <option value="true">开启 — 训练时显示关键词提示</option>
+            <option value="false">关闭 — 无提示，完全靠自己</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="settings-group-title">💾 数据管理</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <button class="btn btn-secondary btn-sm" id="btnExportData">📤 导出数据</button>
+          <button class="btn btn-secondary btn-sm" id="btnImportData">📥 导入数据</button>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <div class="danger-zone">
+          <div class="danger-zone-title">⚠️ 危险区域</div>
+          <button class="btn btn-danger btn-sm btn-block" id="btnResetData">🗑️ 清除所有数据</button>
+        </div>
+      </div>
+
+      <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:11px;">
+        MineTalk v1.0 · Made for African Mining 🏔️
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== BOTTOM NAV ===== -->
+  <nav id="bottom-nav">
+    <button class="nav-item active" data-tab="home">
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">主页</span>
+    </button>
+    <button class="nav-item" data-tab="scenes">
+      <span class="nav-icon">🎯</span>
+      <span class="nav-label">场景</span>
+    </button>
+    <button class="nav-item" data-tab="training">
+      <span class="nav-icon">🎤</span>
+      <span class="nav-label">训练</span>
+    </button>
+    <button class="nav-item" data-tab="cards">
+      <span class="nav-icon">📚</span>
+      <span class="nav-label">词汇</span>
+    </button>
+    <button class="nav-item" data-tab="settings">
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-label">设置</span>
+    </button>
+  </nav>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Achievement Popup Container -->
+<div id="achievementPopup"></div>
+
+<!-- Level Up Modal Container -->
+<div id="levelUpModal"></div>
+
+<!-- Evaluation Modal Container -->
+<div id="evalModal"></div>
+
+<!-- Hidden file input for import -->
+<input type="file" id="importFileInput" accept=".json" style="display:none;">
+
+<!-- Scripts -->
+<script src="js/storage.js"></script>
+<script src="js/game.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/api.js"></script>
+<script src="js/speech.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
