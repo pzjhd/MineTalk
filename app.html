@@ -6,10 +6,11 @@
   <meta name="theme-color" content="#0f0f1a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>MineTalk 鈥?鐭夸笟鍦烘櫙鑻辫璁粌</title>
+  <title>MineTalk — 矿业场景英语训练</title>
   <style>
 /* ============================================
-   MineTalk 鈥?鐭夸笟鍦烘櫙鑻辫瀵硅瘽璁粌鍣?   Game-like Dark Theme (RPG / Mining)
+   MineTalk — 矿业场景英语对话训练器
+   Game-like Dark Theme (RPG / Mining)
    ============================================ */
 
 /* --- CSS Variables --- */
@@ -1442,7 +1443,7 @@ body {
 }
 
 </style>
-  <!-- manifest removed: CDN single-file mode -->
+  <!-- CDN single-file mode: manifest removed -->
 </head>
 <body>
 
@@ -1452,8 +1453,8 @@ body {
     <div class="header-left">
       <div class="level-badge" id="levelBadge">1</div>
       <div class="player-info">
-        <span class="player-name" id="playerName">鍦拌川灏忕帇</span>
-        <span class="player-title" id="playerTitle">馃ゾ Rookie</span>
+        <span class="player-name" id="playerName">地质小王</span>
+        <span class="player-title" id="playerTitle">🥾 Rookie</span>
       </div>
     </div>
     <div class="header-right">
@@ -1462,7 +1463,7 @@ body {
         <span class="xp-mini-text" id="xpMiniText">0/100</span>
       </div>
       <div class="streak-badge" id="streakBadge">
-        <span class="fire">馃敟</span><span id="streakCount">0</span>
+        <span class="fire">🔥</span><span id="streakCount">0</span>
       </div>
     </div>
   </header>
@@ -1475,8 +1476,8 @@ body {
       <!-- XP Card -->
       <div class="xp-card">
         <div class="xp-card-header">
-          <span class="xp-card-title">鈿?缁忛獙鍊?/span>
-          <span class="xp-card-level">Lv.<span id="xpLevel">1</span> 鈫?Lv.<span id="xpNextLevel">2</span></span>
+          <span class="xp-card-title">⚡ 经验值</span>
+          <span class="xp-card-level">Lv.<span id="xpLevel">1</span> → Lv.<span id="xpNextLevel">2</span></span>
         </div>
         <div class="xp-bar-large">
           <div class="xp-bar-fill-large" id="xpBarLarge" style="width:0%"></div>
@@ -1491,22 +1492,22 @@ body {
       <div class="stats-row">
         <div class="stat-card">
           <div class="stat-value" id="statScenes">0</div>
-          <div class="stat-label">璁粌瀹屾垚</div>
+          <div class="stat-label">训练完成</div>
         </div>
         <div class="stat-card">
           <div class="stat-value" id="statMinutes">0</div>
-          <div class="stat-label">璁粌鍒嗛挓</div>
+          <div class="stat-label">训练分钟</div>
         </div>
         <div class="stat-card">
           <div class="stat-value" id="statBest">--</div>
-          <div class="stat-label">鏈€楂樿瘎鍒?/div>
+          <div class="stat-label">最高评分</div>
         </div>
       </div>
 
       <!-- Daily Challenges -->
       <div class="daily-challenges">
         <div class="section-header">
-          <span class="section-title">馃搵 姣忔棩鎸戞垬</span>
+          <span class="section-title">📋 每日挑战</span>
           <span class="section-sub" id="dailyProgress">0/3</span>
         </div>
         <div id="dailyChallengeList"></div>
@@ -1514,7 +1515,7 @@ body {
 
       <!-- Achievements -->
       <div class="section-header">
-        <span class="section-title">馃弳 鎴愬氨</span>
+        <span class="section-title">🏆 成就</span>
         <span class="section-sub" id="achieveCount">0/12</span>
       </div>
       <div class="achievements-row" id="achievementsRow"></div>
@@ -1524,23 +1525,23 @@ body {
     <section class="tab-panel" id="tab-scenes">
       <!-- Accent -->
       <div class="accent-bar">
-        <span>馃帣锔?瀵硅瘽鍙ｉ煶:</span>
+        <span>🎙️ 对话口音:</span>
         <select class="accent-select" id="accentSelect">
-          <option value="en-ZA">馃嚳馃嚘 鍗楅潪鑻辫</option>
-          <option value="en-AU">馃嚘馃嚭 婢冲紡鑻辫</option>
-          <option value="en-GB">馃嚞馃嚙 鑻卞紡鑻辫</option>
-          <option value="en-US">馃嚭馃嚫 缇庡紡鑻辫</option>
-          <option value="en-IN">馃嚠馃嚦 鍗板害鑻辫</option>
+          <option value="en-ZA">🇿🇦 南非英语</option>
+          <option value="en-AU">🇦🇺 澳式英语</option>
+          <option value="en-GB">🇬🇧 英式英语</option>
+          <option value="en-US">🇺🇸 美式英语</option>
+          <option value="en-IN">🇮🇳 印度英语</option>
         </select>
       </div>
 
       <!-- Category Filter -->
       <div class="category-filters" id="categoryFilters">
-        <button class="cat-filter active" data-cat="all">馃幆 鍏ㄩ儴</button>
-        <button class="cat-filter" data-cat="technical">馃敩 鎶€鏈眹鎶?/button>
-        <button class="cat-filter" data-cat="field">鉀忥笍 鐜板満鎸囨尌</button>
-        <button class="cat-filter" data-cat="social">馃嵑 鏃ュ父绀句氦</button>
-        <button class="cat-filter" data-cat="business">馃搵 鍟嗗姟璋堝垽</button>
+        <button class="cat-filter active" data-cat="all">🎯 全部</button>
+        <button class="cat-filter" data-cat="technical">🔬 技术汇报</button>
+        <button class="cat-filter" data-cat="field">⛏️ 现场指挥</button>
+        <button class="cat-filter" data-cat="social">🍺 日常社交</button>
+        <button class="cat-filter" data-cat="business">📋 商务谈判</button>
       </div>
 
       <!-- Scene List -->
@@ -1553,15 +1554,16 @@ body {
         <!-- Start Screen -->
         <div id="trainingStart">
           <div class="training-scene-info">
-            <div class="training-character" id="trainAvatar">馃懆鈥嶐煍?/div>
-            <div class="training-char-name" id="trainCharName">閫夋嫨涓€涓満鏅紑濮?/div>
+            <div class="training-character" id="trainAvatar">👨‍🔧</div>
+            <div class="training-char-name" id="trainCharName">选择一个场景开始</div>
             <div class="training-char-role" id="trainCharRole"></div>
           </div>
           <p style="text-align:center;color:var(--text-muted);font-size:13px;" id="trainSelectHint">
-            馃憜 鍦ㄣ€屽満鏅€嶆爣绛鹃〉涓寫閫変竴涓満鏅紝鐒跺悗鍥炲埌杩欓噷寮€濮嬭缁?          </p>
+            👆 在「场景」标签页中挑选一个场景，然后回到这里开始训练
+          </p>
           <div style="text-align:center;margin-top:12px;display:none;" id="trainStartBtnWrap">
             <button class="btn btn-primary" id="btnStartTraining" style="font-size:16px;padding:14px 40px;">
-              鉀忥笍 寮€濮嬭缁冿紒
+              ⛏️ 开始训练！
             </button>
           </div>
         </div>
@@ -1569,7 +1571,7 @@ body {
         <!-- Active Training -->
         <div id="trainingActive" style="display:none;">
           <div class="training-scene-info">
-            <div class="training-character" id="trainAvatarActive">馃懆鈥嶐煍?/div>
+            <div class="training-character" id="trainAvatarActive">👨‍🔧</div>
             <div class="training-char-name" id="trainCharNameActive"></div>
             <div class="training-char-role" id="trainCharRoleActive"></div>
           </div>
@@ -1585,18 +1587,18 @@ body {
 
           <!-- Mic -->
           <div class="mic-zone">
-            <button class="mic-btn" id="micBtn" title="鐐瑰嚮寮€濮嬭璇?>馃帳</button>
-            <span class="mic-hint" id="micHint">鐐瑰嚮楹﹀厠椋庡紑濮嬭璇?/span>
+            <button class="mic-btn" id="micBtn" title="点击开始说话">🎤</button>
+            <span class="mic-hint" id="micHint">点击麦克风开始说话</span>
           </div>
 
           <!-- Manual Input -->
           <div class="manual-input-row">
-            <input type="text" class="manual-input" id="manualInput" placeholder="鎴栬€呯洿鎺ヨ緭鍏ユ枃瀛?..">
-            <button class="btn-send" id="btnSend">鍙戦€?/button>
+            <input type="text" class="manual-input" id="manualInput" placeholder="或者直接输入文字...">
+            <button class="btn-send" id="btnSend">发送</button>
           </div>
 
           <div style="text-align:center;margin-top:10px;">
-            <button class="btn btn-sm btn-secondary" id="btnEndTraining">缁撴潫璁粌</button>
+            <button class="btn btn-sm btn-secondary" id="btnEndTraining">结束训练</button>
           </div>
         </div>
       </div>
@@ -1608,8 +1610,8 @@ body {
       <div class="flash-card-container">
         <div class="flash-card" id="flashCard">
           <div class="flash-card-front">
-            <div class="card-zh" id="cardZh">閫夋嫨涓€涓瘝姹囧崱缁?/div>
-            <div class="card-hint-label">馃枑锔?鐐瑰嚮缈昏浆</div>
+            <div class="card-zh" id="cardZh">选择一个词汇卡组</div>
+            <div class="card-hint-label">🖐️ 点击翻转</div>
           </div>
           <div class="flash-card-back">
             <div class="card-en" id="cardEn"></div>
@@ -1618,12 +1620,12 @@ body {
         </div>
       </div>
       <div class="card-actions">
-        <button class="btn btn-danger btn-sm" id="btnCardAgain">馃攧 鍐嶇粌涓€娆?/button>
-        <button class="btn btn-primary btn-sm" id="btnCardMastered">鉁?宸叉帉鎻?/button>
+        <button class="btn btn-danger btn-sm" id="btnCardAgain">🔄 再练一次</button>
+        <button class="btn btn-primary btn-sm" id="btnCardMastered">✅ 已掌握</button>
       </div>
       <div class="card-progress" id="cardProgress">1 / 1</div>
       <div class="review-queue" id="reviewQueue" style="display:none;">
-        <div class="review-queue-title">馃摑 寰呭涔?(<span id="reviewCount">0</span>)</div>
+        <div class="review-queue-title">📝 待复习 (<span id="reviewCount">0</span>)</div>
         <div id="reviewList"></div>
       </div>
     </section>
@@ -1631,83 +1633,85 @@ body {
     <!-- TAB 5: Settings -->
     <section class="tab-panel" id="tab-settings">
       <div class="settings-group">
-        <div class="settings-group-title">馃攲 API 璁剧疆</div>
+        <div class="settings-group-title">🔌 API 设置</div>
         <div class="form-group">
           <label class="form-label">DeepSeek API Key</label>
           <input type="password" class="form-input" id="apiKeyInput" placeholder="sk-...">
           <div class="form-hint">
-            瀵嗛挜浠呬繚瀛樺湪浣犵殑娴忚鍣ㄤ腑锛屼笉浼氫笂浼犲埌浠讳綍鏈嶅姟鍣ㄣ€?            <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:var(--info);">鑾峰彇 Key 鈫?/a>
+            密钥仅保存在你的浏览器中，不会上传到任何服务器。
+            <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:var(--info);">获取 Key →</a>
           </div>
           <div class="api-status" id="apiStatus"></div>
         </div>
       </div>
 
       <div class="settings-group">
-        <div class="settings-group-title">馃懁 涓汉淇℃伅</div>
+        <div class="settings-group-title">👤 个人信息</div>
         <div class="form-group">
-          <label class="form-label">鏄电О</label>
-          <input type="text" class="form-input" id="nicknameInput" placeholder="鍦拌川灏忕帇" maxlength="20">
+          <label class="form-label">昵称</label>
+          <input type="text" class="form-input" id="nicknameInput" placeholder="地质小王" maxlength="20">
         </div>
         <div class="form-group">
-          <label class="form-label">榛樿鍙ｉ煶</label>
+          <label class="form-label">默认口音</label>
           <select class="form-input" id="defaultAccentSelect">
-            <option value="en-ZA">馃嚳馃嚘 鍗楅潪鑻辫</option>
-            <option value="en-AU">馃嚘馃嚭 婢冲紡鑻辫</option>
-            <option value="en-GB">馃嚞馃嚙 鑻卞紡鑻辫</option>
-            <option value="en-US">馃嚭馃嚫 缇庡紡鑻辫</option>
-            <option value="en-IN">馃嚠馃嚦 鍗板害鑻辫</option>
+            <option value="en-ZA">🇿🇦 南非英语</option>
+            <option value="en-AU">🇦🇺 澳式英语</option>
+            <option value="en-GB">🇬🇧 英式英语</option>
+            <option value="en-US">🇺🇸 美式英语</option>
+            <option value="en-IN">🇮🇳 印度英语</option>
           </select>
         </div>
         <div class="form-group">
-          <label class="form-label">杈呭姪妯″紡</label>
+          <label class="form-label">辅助模式</label>
           <select class="form-input" id="hintModeSelect">
-            <option value="true">寮€鍚?鈥?璁粌鏃舵樉绀哄叧閿瘝鎻愮ず</option>
-            <option value="false">鍏抽棴 鈥?鏃犳彁绀猴紝瀹屽叏闈犺嚜宸?/option>
+            <option value="true">开启 — 训练时显示关键词提示</option>
+            <option value="false">关闭 — 无提示，完全靠自己</option>
           </select>
         </div>
       </div>
 
       <div class="settings-group">
-        <div class="settings-group-title">馃捑 鏁版嵁绠＄悊</div>
+        <div class="settings-group-title">💾 数据管理</div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button class="btn btn-secondary btn-sm" id="btnExportData">馃摛 瀵煎嚭鏁版嵁</button>
-          <button class="btn btn-secondary btn-sm" id="btnImportData">馃摜 瀵煎叆鏁版嵁</button>
+          <button class="btn btn-secondary btn-sm" id="btnExportData">📤 导出数据</button>
+          <button class="btn btn-secondary btn-sm" id="btnImportData">📥 导入数据</button>
         </div>
       </div>
 
       <div class="settings-group">
         <div class="danger-zone">
-          <div class="danger-zone-title">鈿狅笍 鍗遍櫓鍖哄煙</div>
-          <button class="btn btn-danger btn-sm btn-block" id="btnResetData">馃棏锔?娓呴櫎鎵€鏈夋暟鎹?/button>
+          <div class="danger-zone-title">⚠️ 危险区域</div>
+          <button class="btn btn-danger btn-sm btn-block" id="btnResetData">🗑️ 清除所有数据</button>
         </div>
       </div>
 
       <div style="text-align:center;padding:20px;color:var(--text-muted);font-size:11px;">
-        MineTalk v1.0 路 Made for African Mining 馃彅锔?      </div>
+        MineTalk v1.0 · Made for African Mining 🏔️
+      </div>
     </section>
   </main>
 
   <!-- ===== BOTTOM NAV ===== -->
   <nav id="bottom-nav">
     <button class="nav-item active" data-tab="home">
-      <span class="nav-icon">馃彔</span>
-      <span class="nav-label">涓婚〉</span>
+      <span class="nav-icon">🏠</span>
+      <span class="nav-label">主页</span>
     </button>
     <button class="nav-item" data-tab="scenes">
-      <span class="nav-icon">馃幆</span>
-      <span class="nav-label">鍦烘櫙</span>
+      <span class="nav-icon">🎯</span>
+      <span class="nav-label">场景</span>
     </button>
     <button class="nav-item" data-tab="training">
-      <span class="nav-icon">馃帳</span>
-      <span class="nav-label">璁粌</span>
+      <span class="nav-icon">🎤</span>
+      <span class="nav-label">训练</span>
     </button>
     <button class="nav-item" data-tab="cards">
-      <span class="nav-icon">馃摎</span>
-      <span class="nav-label">璇嶆眹</span>
+      <span class="nav-icon">📚</span>
+      <span class="nav-label">词汇</span>
     </button>
     <button class="nav-item" data-tab="settings">
-      <span class="nav-icon">鈿欙笍</span>
-      <span class="nav-label">璁剧疆</span>
+      <span class="nav-icon">⚙️</span>
+      <span class="nav-label">设置</span>
     </button>
   </nav>
 </div>
@@ -1730,7 +1734,7 @@ body {
 <!-- Scripts -->
 <script>
 /* ============================================
-   storage.js 鈥?localStorage 璇诲啓灏佽
+   storage.js — localStorage 读写封装
    MineTalk v1.0
    ============================================ */
 
@@ -1738,7 +1742,7 @@ const STORAGE_KEY = 'minetalk_data';
 
 const DEFAULT_STATE = {
   player: {
-    name: '鍦拌川灏忕帇',
+    name: '地质小王',
     level: 1,
     xp: 0,
     streak: 0,
@@ -1758,7 +1762,7 @@ const DEFAULT_STATE = {
 };
 
 const Storage = {
-  /** 璇诲彇鍏ㄩ儴鐘舵€?*/
+  /** 读取全部状态 */
   load() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -1771,7 +1775,7 @@ const Storage = {
     }
   },
 
-  /** 淇濆瓨鍏ㄩ儴鐘舵€?*/
+  /** 保存全部状态 */
   save(state) {
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
@@ -1780,13 +1784,13 @@ const Storage = {
     }
   },
 
-  /** 鑾峰彇璁剧疆椤?*/
+  /** 获取设置项 */
   getSetting(key) {
     const state = this.load();
     return state.settings[key];
   },
 
-  /** 鏇存柊璁剧疆椤?*/
+  /** 更新设置项 */
   updateSetting(key, value) {
     const state = this.load();
     state.settings[key] = value;
@@ -1794,12 +1798,12 @@ const Storage = {
     return state;
   },
 
-  /** 鑾峰彇鐜╁鏁版嵁 */
+  /** 获取玩家数据 */
   getPlayer() {
     return this.load().player;
   },
 
-  /** 鏇存柊鐜╁鏁版嵁 */
+  /** 更新玩家数据 */
   updatePlayer(updates) {
     const state = this.load();
     Object.assign(state.player, updates);
@@ -1807,13 +1811,13 @@ const Storage = {
     return state.player;
   },
 
-  /** 鑾峰彇鍦烘櫙杩涘害 */
+  /** 获取场景进度 */
   getSceneProgress(sceneId) {
     const state = this.load();
     return state.scenes[sceneId] || null;
   },
 
-  /** 鏇存柊鍦烘櫙杩涘害 */
+  /** 更新场景进度 */
   updateSceneProgress(sceneId, data) {
     const state = this.load();
     if (!state.scenes[sceneId]) {
@@ -1824,13 +1828,13 @@ const Storage = {
     return state.scenes[sceneId];
   },
 
-  /** 鑾峰彇璇嶆眹鍗＄墖杩涘害 */
+  /** 获取词汇卡片进度 */
   getVocabProgress(cardId) {
     const state = this.load();
     return state.vocabulary[cardId] || null;
   },
 
-  /** 鏇存柊璇嶆眹鍗＄墖杩涘害 */
+  /** 更新词汇卡片进度 */
   updateVocabProgress(cardId, data) {
     const state = this.load();
     if (!state.vocabulary[cardId]) {
@@ -1841,32 +1845,34 @@ const Storage = {
     return state.vocabulary[cardId];
   },
 
-  /** 瑙ｉ攣鎴愬氨 */
+  /** 解锁成就 */
   unlockAchievement(achieveId) {
     const state = this.load();
     if (!state.achievements.includes(achieveId)) {
       state.achievements.push(achieveId);
       this.save(state);
-      return true; // 鏂拌В閿?    }
-    return false; // 宸茶В閿?  },
+      return true; // 新解锁
+    }
+    return false; // 已解锁
+  },
 
-  /** 妫€鏌ユ垚灏辨槸鍚﹀凡瑙ｉ攣 */
+  /** 检查成就是否已解锁 */
   hasAchievement(achieveId) {
     const state = this.load();
     return state.achievements.includes(achieveId);
   },
 
-  /** 瀵煎嚭鏁版嵁 */
+  /** 导出数据 */
   exportData() {
     const state = this.load();
     return JSON.stringify(state, null, 2);
   },
 
-  /** 瀵煎叆鏁版嵁 */
+  /** 导入数据 */
   importData(jsonStr) {
     try {
       const data = JSON.parse(jsonStr);
-      // 鍩烘湰楠岃瘉
+      // 基本验证
       if (!data.player || !data.settings) {
         throw new Error('Invalid data format');
       }
@@ -1878,17 +1884,17 @@ const Storage = {
     }
   },
 
-  /** 瀹屽叏閲嶇疆 */
+  /** 完全重置 */
   resetAll() {
     localStorage.removeItem(STORAGE_KEY);
   },
 
-  /** 娣卞厠闅?*/
+  /** 深克隆 */
   _deepClone(obj) {
     return JSON.parse(JSON.stringify(obj));
   },
 
-  /** 鍚堝苟锛歞efault + saved锛坰aved浼樺厛锛?*/
+  /** 合并：default + saved（saved优先） */
   _merge(def, saved) {
     const result = this._deepClone(def);
     for (const key of Object.keys(result)) {
@@ -1907,43 +1913,43 @@ const Storage = {
 </script>
 <script>
 /* ============================================
-   game.js 鈥?娓告垙鏈哄埗 (XP/绛夌骇/鎴愬氨/杩炲嚮)
+   game.js — 游戏机制 (XP/等级/成就/连击)
    MineTalk v1.0
    ============================================ */
 
 const LEVELS = [
-  { level: 1,  title: '馃ゾ Rookie',          xp: 0 },
-  { level: 2,  title: '鉀忥笍 Junior Miner',    xp: 100 },
-  { level: 3,  title: '馃拵 Senior Miner',    xp: 250 },
-  { level: 4,  title: '馃搵 Foreman',         xp: 500 },
-  { level: 5,  title: '馃敩 Geologist',       xp: 800 },
-  { level: 6,  title: '馃彅锔?Senior Geologist', xp: 1200 },
-  { level: 7,  title: '馃憫 Mine Manager',    xp: 2000 },
-  { level: 8,  title: '馃専 Director',        xp: 3500 },
-  { level: 9,  title: '馃彮 VP Operations',   xp: 5500 },
-  { level: 10, title: '馃實 CEO',             xp: 8000 },
+  { level: 1,  title: '🥾 Rookie',          xp: 0 },
+  { level: 2,  title: '⛏️ Junior Miner',    xp: 100 },
+  { level: 3,  title: '💎 Senior Miner',    xp: 250 },
+  { level: 4,  title: '📋 Foreman',         xp: 500 },
+  { level: 5,  title: '🔬 Geologist',       xp: 800 },
+  { level: 6,  title: '🏔️ Senior Geologist', xp: 1200 },
+  { level: 7,  title: '👑 Mine Manager',    xp: 2000 },
+  { level: 8,  title: '🌟 Director',        xp: 3500 },
+  { level: 9,  title: '🏭 VP Operations',   xp: 5500 },
+  { level: 10, title: '🌍 CEO',             xp: 8000 },
 ];
 
 const ACHIEVEMENTS = [
-  { id: 'first-scene',     icon: '馃幆', name: '鍒濇涓嬩簳',   desc: '瀹屾垚绗竴娆¤缁?,         hint: '瀹屾垚浠绘剰鍦烘櫙璁粌' },
-  { id: 'scenes-5',        icon: '猸?, name: '浜旀鍘嗙粌',   desc: '瀹屾垚5娆¤缁?,           hint: '绱瀹屾垚5涓満鏅? },
-  { id: 'scenes-20',       icon: '馃専', name: '浜屽崄杩炶儨',   desc: '瀹屾垚20娆¤缁?,          hint: '绱瀹屾垚20涓満鏅? },
-  { id: 'scenes-100',      icon: '馃弳', name: '鐧剧偧鎴愰挗',   desc: '瀹屾垚100娆¤缁?,         hint: '绱瀹屾垚100涓満鏅? },
-  { id: 'streak-3',        icon: '馃敟', name: '涓夋棩涔嬬伀',   desc: '杩炵画鎵撳崱3澶?,           hint: '杩炵画3澶╁畬鎴愯缁? },
-  { id: 'streak-7',        icon: '馃挜', name: '涓€鍛ㄤ箣鏄?,   desc: '杩炵画鎵撳崱7澶?,           hint: '杩炵画7澶╁畬鎴愯缁? },
-  { id: 'streak-30',       icon: '鈽勶笍', name: '鏈堝害浼犲',   desc: '杩炵画鎵撳崱30澶?,          hint: '杩炵画30澶╁畬鎴愯缁? },
-  { id: 'score-90',        icon: '馃挴', name: '婊″垎瀵硅瘽',   desc: '鍗曟璇勫垎90+',           hint: '璁粌璇勫垎杈惧埌90鍒嗕互涓? },
-  { id: 'perfect',         icon: '鉁?, name: '瀹岀編婕旂粠',   desc: '鍗曟璇勫垎100鍒?,         hint: '璁粌鑾峰緱婊″垎璇勪环' },
-  { id: 'vocab-20',        icon: '馃摎', name: '璇嶆眹瀛﹀緬',   desc: '鎺屾彙20寮犺瘝姹囧崱',        hint: '鏍囪20寮犲崱鐗囦负宸叉帉鎻? },
-  { id: 'vocab-50',        icon: '馃摉', name: '璇嶆眹澶у笀',   desc: '鎺屾彙50寮犺瘝姹囧崱',        hint: '鏍囪50寮犲崱鐗囦负宸叉帉鎻? },
-  { id: 'all-categories',  icon: '馃實', name: '鍏ㄨ兘鐭垮伐',   desc: '瀹屾垚鍏ㄩ儴鍥涚被鍦烘櫙',      hint: '鎶€鏈?鐜板満/绀句氦/鍟嗗姟鍚勫畬鎴愪竴娆? },
-  { id: 'multi-accent',    icon: '馃幁', name: '澶氳瑷€鑰?,   desc: '鐢?绉嶅彛闊冲畬鎴愯缁?,     hint: '鍒囨崲鍙ｉ煶瀹屾垚璁粌鍚勪竴娆? },
-  { id: 'speed-demon',     icon: '鈿?, name: '蹇€熷弽搴?,   desc: '3绉掑唴寮€濮嬪洖绛?,         hint: 'AI璇村畬鍚?绉掑唴寮€濮嬭璇? },
-  { id: 'night-owl',       icon: '馃', name: '娣卞鐭垮伐',   desc: '鏅氫笂10鐐瑰悗瀹屾垚璁粌',    hint: '鍦?2:00-04:00闂村畬鎴愯缁? },
+  { id: 'first-scene',     icon: '🎯', name: '初次下井',   desc: '完成第一次训练',         hint: '完成任意场景训练' },
+  { id: 'scenes-5',        icon: '⭐', name: '五次历练',   desc: '完成5次训练',           hint: '累计完成5个场景' },
+  { id: 'scenes-20',       icon: '🌟', name: '二十连胜',   desc: '完成20次训练',          hint: '累计完成20个场景' },
+  { id: 'scenes-100',      icon: '🏆', name: '百炼成钢',   desc: '完成100次训练',         hint: '累计完成100个场景' },
+  { id: 'streak-3',        icon: '🔥', name: '三日之火',   desc: '连续打卡3天',           hint: '连续3天完成训练' },
+  { id: 'streak-7',        icon: '💥', name: '一周之星',   desc: '连续打卡7天',           hint: '连续7天完成训练' },
+  { id: 'streak-30',       icon: '☄️', name: '月度传奇',   desc: '连续打卡30天',          hint: '连续30天完成训练' },
+  { id: 'score-90',        icon: '💯', name: '满分对话',   desc: '单次评分90+',           hint: '训练评分达到90分以上' },
+  { id: 'perfect',         icon: '✨', name: '完美演绎',   desc: '单次评分100分',         hint: '训练获得满分评价' },
+  { id: 'vocab-20',        icon: '📚', name: '词汇学徒',   desc: '掌握20张词汇卡',        hint: '标记20张卡片为已掌握' },
+  { id: 'vocab-50',        icon: '📖', name: '词汇大师',   desc: '掌握50张词汇卡',        hint: '标记50张卡片为已掌握' },
+  { id: 'all-categories',  icon: '🌍', name: '全能矿工',   desc: '完成全部四类场景',      hint: '技术/现场/社交/商务各完成一次' },
+  { id: 'multi-accent',    icon: '🎭', name: '多语言者',   desc: '用3种口音完成训练',     hint: '切换口音完成训练各一次' },
+  { id: 'speed-demon',     icon: '⚡', name: '快速反应',   desc: '3秒内开始回答',         hint: 'AI说完后3秒内开始说话' },
+  { id: 'night-owl',       icon: '🦉', name: '深夜矿工',   desc: '晚上10点后完成训练',    hint: '在22:00-04:00间完成训练' },
 ];
 
 const Game = {
-  /** 鑾峰彇褰撳墠绛夌骇淇℃伅 */
+  /** 获取当前等级信息 */
   getLevelInfo(xp) {
     let info = LEVELS[0];
     for (let i = LEVELS.length - 1; i >= 0; i--) {
@@ -1955,17 +1961,17 @@ const Game = {
     return info;
   },
 
-  /** 鑾峰彇涓嬩竴绛夌骇淇℃伅 */
+  /** 获取下一等级信息 */
   getNextLevelInfo(xp) {
     const current = this.getLevelInfo(xp);
     const idx = LEVELS.findIndex(l => l.level === current.level);
     if (idx < LEVELS.length - 1) {
       return LEVELS[idx + 1];
     }
-    return null; // 婊＄骇
+    return null; // 满级
   },
 
-  /** 璁＄畻XP杩涘害鐧惧垎姣?*/
+  /** 计算XP进度百分比 */
   getXpProgress(xp) {
     const current = this.getLevelInfo(xp);
     const next = this.getNextLevelInfo(xp);
@@ -1975,23 +1981,23 @@ const Game = {
     return Math.min(100, Math.floor((levelXp / needed) * 100));
   },
 
-  /** 鑾峰彇绛夌骇鍒楄〃 */
+  /** 获取等级列表 */
   getLevels() {
     return LEVELS;
   },
 
-  /** 鑾峰彇鎴愬氨鍒楄〃 */
+  /** 获取成就列表 */
   getAchievements() {
     return ACHIEVEMENTS;
   },
 
-  /** 鏍规嵁ID鑾峰彇鍗曚釜鎴愬氨 */
+  /** 根据ID获取单个成就 */
   getAchievement(id) {
     return ACHIEVEMENTS.find(a => a.id === id) || null;
   },
 
   /**
-   * 濂栧姳XP
+   * 奖励XP
    * @returns {{ xpGained: number, leveledUp: boolean, newLevel: number|null, newTitle: string|null }}
    */
   awardXP(currentXp, amount) {
@@ -2009,20 +2015,20 @@ const Game = {
   },
 
   /**
-   * 璁＄畻鍦烘櫙璁粌XP
+   * 计算场景训练XP
    */
   calcSceneXP(score, isFirstToday, streakDays) {
-    let xp = 50; // 鍩虹
-    if (score >= 90) xp += 50;      // 瀹岀編
-    else if (score >= 80) xp += 20; // 浼樼
+    let xp = 50; // 基础
+    if (score >= 90) xp += 50;      // 完美
+    else if (score >= 80) xp += 20; // 优秀
     if (isFirstToday) {
-      xp += 10 + Math.min(streakDays, 7) * 5; // 杩炲嚮鍔犳垚
+      xp += 10 + Math.min(streakDays, 7) * 5; // 连击加成
     }
     return xp;
   },
 
   /**
-   * 鏇存柊杩炲嚮
+   * 更新连击
    * @returns {{ streak: number, isNewDay: boolean }}
    */
   updateStreak(lastTrainingDate, currentStreak) {
@@ -2034,12 +2040,13 @@ const Game = {
     if (lastTrainingDate === yesterday) {
       return { streak: currentStreak + 1, isNewDay: true };
     }
-    // 鏂浜?    return { streak: 1, isNewDay: true };
+    // 断签了
+    return { streak: 1, isNewDay: true };
   },
 
   /**
-   * 妫€鏌ュ苟瑙ｉ攣鎴愬氨
-   * @returns {Array} 鏂拌В閿佺殑鎴愬氨鍒楄〃
+   * 检查并解锁成就
+   * @returns {Array} 新解锁的成就列表
    */
   checkAchievements(state) {
     const newly = [];
@@ -2062,12 +2069,13 @@ const Game = {
     check('score-90', player.bestScore >= 90);
     check('perfect', player.bestScore >= 100);
 
-    // 璇嶆眹鎺屾彙鏁伴噺
+    // 词汇掌握数量
     const masteredCount = Object.values(state.vocabulary).filter(v => v.mastered).length;
     check('vocab-20', masteredCount >= 20);
     check('vocab-50', masteredCount >= 50);
 
-    // 鍏ㄧ被鍒畬鎴?    const categories = new Set();
+    // 全类别完成
+    const categories = new Set();
     for (const [sceneId, progress] of Object.entries(state.scenes)) {
       if (progress.completed) {
         const cat = sceneId.split('-')[0];
@@ -2076,23 +2084,25 @@ const Game = {
     }
     check('all-categories', categories.size >= 4);
 
-    // 澶氬彛闊?    check('multi-accent', false); // TODO: track accents used
+    // 多口音
+    check('multi-accent', false); // TODO: track accents used
 
-    // 蹇€熷弽搴?    check('speed-demon', false); // TODO: track response time
+    // 快速反应
+    check('speed-demon', false); // TODO: track response time
 
-    // 娣卞鐭垮伐
+    // 深夜矿工
     const hour = new Date().getHours();
     check('night-owl', hour >= 22 || hour < 4);
 
     return newly;
   },
 
-  /** 浠婃棩鏃ユ湡 YYYY-MM-DD */
+  /** 今日日期 YYYY-MM-DD */
   _today() {
     return new Date().toISOString().slice(0, 10);
   },
 
-  /** N澶╁墠鏃ユ湡 */
+  /** N天前日期 */
   _daysAgo(n) {
     const d = new Date();
     d.setDate(d.getDate() - n);
@@ -2103,36 +2113,37 @@ const Game = {
 </script>
 <script>
 /* ============================================
-   scenes.js 鈥?鐭夸笟鍦烘櫙鏁版嵁搴?   MineTalk v1.0
+   scenes.js — 矿业场景数据库
+   MineTalk v1.0
    ============================================ */
 
 const SCENES = [
-  // ==================== 鎶€鏈眹鎶?(technical) ====================
+  // ==================== 技术汇报 (technical) ====================
   {
     id: 'technical-001',
     category: 'technical',
-    title: '姹囨姤浠婃棩閽绘帰缁撴灉',
-    subtitle: '鍚戞境娲叉€诲伐姹囨姤鍝佷綅鍜岃繘灏?,
+    title: '汇报今日钻探结果',
+    subtitle: '向澳洲总工汇报品位和进尺',
     difficulty: 3,
     estimatedMinutes: 5,
     rounds: 5,
     character: {
       name: 'Mike Thompson',
-      role: '婢虫床鎬诲伐绋嬪笀',
-      avatar: '馃懆鈥嶐煍?,
+      role: '澳洲总工程师',
+      avatar: '👨‍🔧',
       accent: 'en-AU',
-      personality: '涓撲笟浣嗗弸鍠勶紝浼氳拷闂粏鑺?,
+      personality: '专业但友善，会追问细节',
     },
     context: {
-      setting: '绾崇背姣斾簹鐭垮北鐜板満鍔炲叕瀹わ紝涓嬪崍4鐐规瘡鏃ユ眹鎶?,
-      yourRole: '涓浗鍦拌川宸ョ▼甯堬紝璐熻矗浠婂ぉ鐨勯捇鎺㈠彇鏍峰伐浣?,
+      setting: '纳米比亚矿山现场办公室，下午4点每日汇报',
+      yourRole: '中国地质工程师，负责今天的钻探取样工作',
     },
     keyVocabulary: [
-      { zh: '宀╁績閲囧彇鐜?, en: 'core recovery rate' },
-      { zh: '鐭垮寲甯﹀帤搴?, en: 'mineralized zone thickness' },
-      { zh: '鍝佷綅', en: 'grade' },
-      { zh: '閽昏繘娣卞害', en: 'drilling depth' },
-      { zh: '涓嬩竴姝ュ缓璁?, en: 'recommendation for next step' },
+      { zh: '岩心采取率', en: 'core recovery rate' },
+      { zh: '矿化带厚度', en: 'mineralized zone thickness' },
+      { zh: '品位', en: 'grade' },
+      { zh: '钻进深度', en: 'drilling depth' },
+      { zh: '下一步建议', en: 'recommendation for next step' },
     ],
     systemPrompt: `You are Mike Thompson, an Australian chief engineer at a uranium mine in Namibia. You are talking to a Chinese geologist who just finished today's drilling sampling work.
 
@@ -2149,7 +2160,7 @@ The conversation should cover:
 IMPORTANT RULES:
 - Speak naturally with an Australian English style (use "G'day", "mate", "righto" occasionally but don't overdo it)
 - Keep each response to 2-4 sentences
-- React naturally to what the geologist says 鈥?if they mention something interesting, ask follow-up questions
+- React naturally to what the geologist says — if they mention something interesting, ask follow-up questions
 - Adjust your questions based on their answers; don't just follow a script
 
 After 5 rounds of dialogue, end the conversation by saying "Thanks for the update mate, that's all I need for now."
@@ -2162,37 +2173,37 @@ Use scores 1-10 for each metric. Be honest but encouraging. The tip should be ON
   {
     id: 'technical-002',
     category: 'technical',
-    title: '閾€鐭垮搧浣嶅紓甯歌璁?,
-    subtitle: '鍙戠幇楂樺搧浣嶆锛屽拰棣栧腑鍦拌川甯堣璁?,
+    title: '铀矿品位异常讨论',
+    subtitle: '发现高品位段，和首席地质师讨论',
     difficulty: 4,
     estimatedMinutes: 6,
     rounds: 5,
     character: {
       name: 'Dr. Sarah Chen',
-      role: '棣栧腑鍦拌川甯堬紙鍗庤婢崇睄锛?,
-      avatar: '馃懇鈥嶐煍?,
+      role: '首席地质师（华裔澳籍）',
+      avatar: '👩‍🔬',
       accent: 'en-AU',
-      personality: '涓ヨ皑銆佹暟鎹┍鍔紝鍋跺皵璇翠腑鏂囨湳璇?,
+      personality: '严谨、数据驱动，偶尔说中文术语',
     },
     context: {
-      setting: '鐭垮北鍦拌川鍔炲叕瀹わ紝浣犲垰鎷垮埌鏈€鏂癤RF鍒嗘瀽缁撴灉',
-      yourRole: '鐜板満鍦拌川甯堬紝鍙戠幇浜嗕竴娈靛紓甯搁珮鍝佷綅锛?500ppm U鈧僌鈧堬級',
+      setting: '矿山地质办公室，你刚拿到最新XRF分析结果',
+      yourRole: '现场地质师，发现了一段异常高品位（>500ppm U₃O₈）',
     },
     keyVocabulary: [
-      { zh: '寮傚父楂樺搧浣?, en: 'anomalously high grade' },
-      { zh: 'XRF鍒嗘瀽', en: 'XRF analysis' },
-      { zh: '杈圭晫鍝佷綅', en: 'cut-off grade' },
-      { zh: '鐭垮寲鎺у埗鍥犵礌', en: 'mineralization controls' },
-      { zh: '閲嶅閲囨牱', en: 'duplicate sampling' },
+      { zh: '异常高品位', en: 'anomalously high grade' },
+      { zh: 'XRF分析', en: 'XRF analysis' },
+      { zh: '边界品位', en: 'cut-off grade' },
+      { zh: '矿化控制因素', en: 'mineralization controls' },
+      { zh: '重复采样', en: 'duplicate sampling' },
     ],
     systemPrompt: `You are Dr. Sarah Chen, chief geologist at a uranium mine. Chinese-Australian, occasionally uses Chinese geological terms. Data-driven, rigorous, but warm.
 
-The geologist has discovered an anomalously high grade section (>500ppm U鈧僌鈧?.
+The geologist has discovered an anomalously high grade section (>500ppm U₃O₈).
 
 Discuss:
 1. Ask about the exact depth interval and thickness
-2. Question the XRF calibration 鈥?when was it last checked?
-3. Discuss the geological controls 鈥?what structure hosts this mineralization?
+2. Question the XRF calibration — when was it last checked?
+3. Discuss the geological controls — what structure hosts this mineralization?
 4. Suggest verification: duplicate sampling, lab assay, check adjacent holes
 5. Discuss implications for resource model update
 
@@ -2203,28 +2214,28 @@ Append JSON evaluation. Be rigorous in evaluating geological vocabulary accuracy
   {
     id: 'technical-003',
     category: 'technical',
-    title: '鍛ㄦ姤瀹夊叏鏁版嵁姹囨姤',
-    subtitle: '鍦ㄥ懆浼氫笂姹囨姤鏈懆HSE鏁版嵁',
+    title: '周报安全数据汇报',
+    subtitle: '在周会上汇报本周HSE数据',
     difficulty: 2,
     estimatedMinutes: 4,
     rounds: 4,
     character: {
       name: 'James van der Merwe',
-      role: '鐭垮北瀹夊叏缁忕悊锛堝崡闈炵睄锛?,
-      avatar: '馃懛',
+      role: '矿山安全经理（南非籍）',
+      avatar: '👷',
       accent: 'en-ZA',
-      personality: '涓ヨ們銆佽緝鐪燂紝瀵瑰畨鍏ㄦ暟鎹瀬搴︽晱鎰?,
+      personality: '严肃、较真，对安全数据极度敏感',
     },
     context: {
-      setting: '鍛ㄤ竴鏃╅棿瀹夊叏渚嬩細',
-      yourRole: '鍦拌川閮ㄩ棬浠ｈ〃锛屾眹鎶ユ湰鍛℉SE鎸囨爣',
+      setting: '周一早间安全例会',
+      yourRole: '地质部门代表，汇报本周HSE指标',
     },
     keyVocabulary: [
-      { zh: '鎹熷け宸ユ椂浜嬫晠', en: 'lost time injury (LTI)' },
-      { zh: '鏈亗浜嬩欢', en: 'near miss' },
-      { zh: '瀹夊叏宸ユ椂', en: 'safe man-hours' },
-      { zh: '鏁存敼鎺柦', en: 'corrective actions' },
-      { zh: '椋庨櫓璇勪及', en: 'risk assessment' },
+      { zh: '损失工时事故', en: 'lost time injury (LTI)' },
+      { zh: '未遂事件', en: 'near miss' },
+      { zh: '安全工时', en: 'safe man-hours' },
+      { zh: '整改措施', en: 'corrective actions' },
+      { zh: '风险评估', en: 'risk assessment' },
     ],
     systemPrompt: `You are James van der Merwe, safety manager at a Namibian uranium mine, South African. Very serious about safety, will interrogate numbers.
 
@@ -2245,29 +2256,29 @@ Append JSON evaluation. Pay special attention to safety terminology accuracy.`,
   {
     id: 'technical-004',
     category: 'technical',
-    title: '璧勬簮妯″瀷鏇存柊璁ㄨ',
-    subtitle: '涓庤祫婧愬湴璐ㄥ笀璁ㄨ鏈€鏂板潡妯″瀷',
+    title: '资源模型更新讨论',
+    subtitle: '与资源地质师讨论最新块模型',
     difficulty: 5,
     estimatedMinutes: 7,
     rounds: 6,
     character: {
       name: 'Pierre du Toit',
-      role: '璧勬簮鍦拌川甯堬紙鍗楅潪绫嶏級',
-      avatar: '馃鈥嶐煉?,
+      role: '资源地质师（南非籍）',
+      avatar: '🧑‍💻',
       accent: 'en-ZA',
-      personality: '鎶€鏈帶锛屽枩娆㈣璁虹畻娉曠粏鑺?,
+      personality: '技术控，喜欢讨论算法细节',
     },
     context: {
-      setting: '璧勬簮寤烘ā鍔炲叕瀹わ紝姝ｅ湪璁ㄨLeapfrog/Isatis妯″瀷鏇存柊',
-      yourRole: '鍦拌川甯堬紝鍒氬畬鎴愭柊涓€杞捇瀛旀暟鎹簱鏇存柊',
+      setting: '资源建模办公室，正在讨论Leapfrog/Isatis模型更新',
+      yourRole: '地质师，刚完成新一轮钻孔数据库更新',
     },
     keyVocabulary: [
-      { zh: '鍧楁ā鍨?, en: 'block model' },
-      { zh: '鍏嬮噷閲戞硶', en: 'kriging' },
-      { zh: '鍙樺紓鍑芥暟', en: 'variogram' },
-      { zh: '鎼滅储妞悆', en: 'search ellipsoid' },
-      { zh: '璧勬簮閲忎及绠?, en: 'resource estimation' },
-      { zh: '缃俊搴?, en: 'confidence level' },
+      { zh: '块模型', en: 'block model' },
+      { zh: '克里金法', en: 'kriging' },
+      { zh: '变异函数', en: 'variogram' },
+      { zh: '搜索椭球', en: 'search ellipsoid' },
+      { zh: '资源量估算', en: 'resource estimation' },
+      { zh: '置信度', en: 'confidence level' },
     ],
     systemPrompt: `You are Pierre du Toit, a resource geologist at a uranium mine. South African. Technical, loves discussing estimation parameters.
 
@@ -2285,34 +2296,34 @@ After 6 rounds, conclude: "I'll run the full estimation tonight. Let's review to
 Append JSON evaluation. Be tough on technical vocabulary precision.`,
   },
 
-  // ==================== 鐜板満鎸囨尌 (field) ====================
+  // ==================== 现场指挥 (field) ====================
   {
     id: 'field-001',
     category: 'field',
-    title: '鎸囨尌閲囨牱宸ュ彇鏍?,
-    subtitle: '鍛婅瘔褰撳湴閲囨牱宸ユ纭殑鍙栨牱娴佺▼',
+    title: '指挥采样工取样',
+    subtitle: '告诉当地采样工正确的取样流程',
     difficulty: 2,
     estimatedMinutes: 4,
     rounds: 4,
     character: {
       name: 'Johannes',
-      role: '绾崇背姣斾簹閲囨牱宸ョ粍闀?,
-      avatar: '馃懛鈥嶁檪锔?,
+      role: '纳米比亚采样工组长',
+      avatar: '👷‍♂️',
       accent: 'en-ZA',
-      personality: '鏈夌粡楠屼絾闇€瑕佹竻妤氭寚浠わ紝鑻辫涓虹浜岃瑷€',
+      personality: '有经验但需要清楚指令，英语为第二语言',
     },
     context: {
-      setting: '閽绘満涓婏紝鍒氭彁涓婂博蹇冿紝闇€瑕佺珛鍗冲彇鏍?,
-      yourRole: '鐜板満鍦拌川甯堬紝璐熻矗鐩戠潱閲囨牱璐ㄩ噺',
+      setting: '钻机上，刚提上岩心，需要立即取样',
+      yourRole: '现场地质师，负责监督采样质量',
     },
     keyVocabulary: [
-      { zh: '宀╁績绠?, en: 'core tray' },
-      { zh: '鏍峰搧琚?, en: 'sample bag' },
-      { zh: '鏍囩缂栧彿', en: 'tag number' },
-      { zh: '鍙栨牱闂撮殧', en: 'sampling interval' },
-      { zh: '姹℃煋', en: 'contamination' },
+      { zh: '岩心箱', en: 'core tray' },
+      { zh: '样品袋', en: 'sample bag' },
+      { zh: '标签编号', en: 'tag number' },
+      { zh: '取样间隔', en: 'sampling interval' },
+      { zh: '污染', en: 'contamination' },
     ],
-    systemPrompt: `You are Johannes, a Namibian sampling crew leader. English is your second language 鈥?you speak simply, sometimes with minor grammar errors. You're experienced and hardworking, but need clear instructions.
+    systemPrompt: `You are Johannes, a Namibian sampling crew leader. English is your second language — you speak simply, sometimes with minor grammar errors. You're experienced and hardworking, but need clear instructions.
 
 Setting: At the drill rig. Core has just been pulled. The geologist is giving you sampling instructions.
 
@@ -2320,79 +2331,79 @@ You should:
 1. Ask what interval to sample ("How many meters, boss?")
 2. Clarify tag numbering ("Start from what number?")
 3. Confirm understanding ("So I put tag on bag AND in core box, right?")
-4. Ask about any special handling ("This one look different 鈥?you want special sample?")
+4. Ask about any special handling ("This one look different — you want special sample?")
 5. Confirm when you'll finish ("I bring to lab by 5 o'clock?")
 
 After 4 rounds, say: "OK boss, I got it. Three bags, two meters each, tags 147 to 149. No contamination!"
-Append JSON evaluation. Be encouraging 鈥?this is basic field communication.`,
+Append JSON evaluation. Be encouraging — this is basic field communication.`,
   },
 
   {
     id: 'field-002',
     category: 'field',
-    title: '閽绘満鏁呴殰澶勭悊',
-    subtitle: '閽绘満鍗′綇浜嗭紝鍜岄捇宸ヨ璁鸿В鍐虫柟妗?,
+    title: '钻机故障处理',
+    subtitle: '钻机卡住了，和钻工讨论解决方案',
     difficulty: 3,
     estimatedMinutes: 5,
     rounds: 5,
     character: {
       name: 'Pieter',
-      role: '鍗楅潪閽诲伐棰嗙彮',
-      avatar: '馃敡',
+      role: '南非钻工领班',
+      avatar: '🔧',
       accent: 'en-ZA',
-      personality: '鐩寸埥銆佹湁30骞寸粡楠岋紝鍠滄鐢ㄤ繗璇?,
+      personality: '直爽、有30年经验，喜欢用俚语',
     },
     context: {
-      setting: '閽绘帰鐜板満锛孯C閽绘満鍦?80绫冲鍗￠捇',
-      yourRole: '鐜板満鍦拌川甯堬紝闇€瑕佸喅瀹氭槸缁х画杩樻槸鏀惧純杩欎釜瀛?,
+      setting: '钻探现场，RC钻机在180米处卡钻',
+      yourRole: '现场地质师，需要决定是继续还是放弃这个孔',
     },
     keyVocabulary: [
-      { zh: '鍗￠捇', en: 'stuck drill rods / jammed' },
-      { zh: '閽诲瓟鍋忔枩', en: 'hole deviation' },
-      { zh: '閽讳簳娑?, en: 'drilling fluid / mud' },
-      { zh: '鎻愬嚭閽诲叿', en: 'pull out the string' },
-      { zh: '渚ч捇', en: 'whipstock / sidetrack' },
+      { zh: '卡钻', en: 'stuck drill rods / jammed' },
+      { zh: '钻孔偏斜', en: 'hole deviation' },
+      { zh: '钻井液', en: 'drilling fluid / mud' },
+      { zh: '提出钻具', en: 'pull out the string' },
+      { zh: '侧钻', en: 'whipstock / sidetrack' },
     ],
     systemPrompt: `You are Pieter, a South African driller with 30 years experience. You speak with a strong South African accent style, using words like "ja", "boet", "shame". You know your stuff.
 
-Setting: At the drill rig. RC drilling has hit a problem at 180m 鈥?the rods are jammed.
+Setting: At the drill rig. RC drilling has hit a problem at 180m — the rods are jammed.
 
 You should:
-1. Explain what happened ("Ja, the rods jammed at 180 meters, boet. Formation changed 鈥?hit something hard.")
+1. Explain what happened ("Ja, the rods jammed at 180 meters, boet. Formation changed — hit something hard.")
 2. Describe what you've tried ("We pulled hard, no luck. Circulation is lost.")
 3. Suggest options: keep trying / pull out and sidetrack / abandon hole
 4. Discuss cost and time implications of each option
-5. Ask the geologist what they want 鈥?is the target worth the trouble?
+5. Ask the geologist what they want — is the target worth the trouble?
 
 After 5 rounds, say: "Right, I'll pull the string. We lose maybe half a day. But we get your sample, ja?"
-Append JSON evaluation. Don't penalize for casual style 鈥?focus on whether they communicated clearly.`,
+Append JSON evaluation. Don't penalize for casual style — focus on whether they communicated clearly.`,
   },
 
   {
     id: 'field-003',
     category: 'field',
-    title: '瀹為獙瀹ゆ牱鍝佷氦鎺?,
-    subtitle: '鍜屽疄楠屽鎶€鏈憳纭鏍峰搧娓呭崟鍜屽垎鏋愰」鐩?,
+    title: '实验室样品交接',
+    subtitle: '和实验室技术员确认样品清单和分析项目',
     difficulty: 2,
     estimatedMinutes: 4,
     rounds: 4,
     character: {
       name: 'Grace',
-      role: '鐭垮北瀹為獙瀹ゆ妧鏈憳',
-      avatar: '馃И',
+      role: '矿山实验室技术员',
+      avatar: '🧪',
       accent: 'en-ZA',
-      personality: '缁嗗績銆佹湁鏉＄悊锛屽鏍峰搧缂栧彿鏁忔劅',
+      personality: '细心、有条理，对样品编号敏感',
     },
     context: {
-      setting: '鐭垮北瀹為獙瀹ゅ墠鍙帮紝浣犻€佹潵涓€鎵瑰博蹇冩牱鍝?,
-      yourRole: '鍦拌川甯堬紝鎻愪氦鏍峰搧骞舵槑纭垎鏋愯姹?,
+      setting: '矿山实验室前台，你送来一批岩心样品',
+      yourRole: '地质师，提交样品并明确分析要求',
     },
     keyVocabulary: [
-      { zh: '鏍峰搧娓呭崟', en: 'sample submission form' },
-      { zh: '鍒嗘瀽椤圭洰', en: 'analytical suite' },
-      { zh: '璐ㄦ帶鏍峰搧', en: 'QAQC samples (standards, blanks, duplicates)' },
-      { zh: '鍓嶅鐞?, en: 'sample preparation' },
-      { zh: '妫€娴嬮檺', en: 'detection limit' },
+      { zh: '样品清单', en: 'sample submission form' },
+      { zh: '分析项目', en: 'analytical suite' },
+      { zh: '质控样品', en: 'QAQC samples (standards, blanks, duplicates)' },
+      { zh: '前处理', en: 'sample preparation' },
+      { zh: '检测限', en: 'detection limit' },
     ],
     systemPrompt: `You are Grace, a lab technician at a Namibian uranium mine laboratory. Detail-oriented, particular about sample IDs and paperwork.
 
@@ -2409,32 +2420,32 @@ After 4 rounds, say: "Alright, 23 samples plus 3 QAQC. Batch number is U238-0723
 Append JSON evaluation. Focus on clarity and precision of instructions.`,
   },
 
-  // ==================== 鏃ュ父绀句氦 (social) ====================
+  // ==================== 日常社交 (social) ====================
   {
     id: 'social-001',
     category: 'social',
-    title: '鍛ㄦ湯Braai閭€璇?,
-    subtitle: '褰撳湴鍚屼簨閭€璇蜂綘鍘荤儳鐑?,
+    title: '周末Braai邀请',
+    subtitle: '当地同事邀请你去烧烤',
     difficulty: 2,
     estimatedMinutes: 4,
     rounds: 4,
     character: {
       name: 'Thabo',
-      role: '绾崇背姣斾簹鍦拌川甯堝悓浜?,
-      avatar: '馃ォ',
+      role: '纳米比亚地质师同事',
+      avatar: '🥩',
       accent: 'en-ZA',
-      personality: '鐑儏濂藉锛屽枩娆㈠紑鐜╃瑧',
+      personality: '热情好客，喜欢开玩笑',
     },
     context: {
-      setting: '鍛ㄤ簲涓嬪崍锛岀熆灞卞姙鍏锛屽噯澶囦笅鐝?,
-      yourRole: '涓浗鍦拌川甯堬紝鏉ョ撼绫虫瘮浜氬伐浣?涓湀',
+      setting: '周五下午，矿山办公室，准备下班',
+      yourRole: '中国地质师，来纳米比亚工作3个月',
     },
     keyVocabulary: [
-      { zh: '鐑х儰锛堝崡闈炶娉曪級', en: 'braai (barbecue)' },
-      { zh: '甯︾偣涓滆タ', en: 'bring something along' },
-      { zh: '鍗楅潪棣欒偁', en: 'boerewors' },
-      { zh: '鍩庡牎鍟ら厭', en: 'Castle Lager (local beer)' },
-      { zh: '鏀炬澗涓€涓?, en: 'unwind / chill out' },
+      { zh: '烧烤（南非说法）', en: 'braai (barbecue)' },
+      { zh: '带点东西', en: 'bring something along' },
+      { zh: '南非香肠', en: 'boerewors' },
+      { zh: '城堡啤酒', en: 'Castle Lager (local beer)' },
+      { zh: '放松一下', en: 'unwind / chill out' },
     ],
     systemPrompt: `You are Thabo, a Namibian geologist colleague. Friendly, warm, always organizing social events. You speak with a Namibian/South African English style.
 
@@ -2447,39 +2458,39 @@ The conversation should:
 4. Share something casual about Namibian culture or food
 5. Make them feel welcome and included
 
-Keep the tone warm and casual 鈥?this is about social connection, not work.
+Keep the tone warm and casual — this is about social connection, not work.
 
-After 4 rounds, say: "Lekker! See you Saturday at 2. Don't stress about what to bring 鈥?just bring yourself!"
-Append JSON evaluation. Be kind 鈥?social English is about warmth and connection, not perfect grammar. Focus on whether they could build rapport.`,
+After 4 rounds, say: "Lekker! See you Saturday at 2. Don't stress about what to bring — just bring yourself!"
+Append JSON evaluation. Be kind — social English is about warmth and connection, not perfect grammar. Focus on whether they could build rapport.`,
   },
 
   {
     id: 'social-002',
     category: 'social',
-    title: '鍜屽綋鍦板徃鏈鸿亰瀹跺父',
-    subtitle: '鍑哄樊璺笂鍜屽徃鏈洪棽鑱?,
+    title: '和当地司机聊家常',
+    subtitle: '出差路上和司机闲聊',
     difficulty: 1,
     estimatedMinutes: 3,
     rounds: 3,
     character: {
       name: 'Samuel',
-      role: '鐭垮北鐝溅鍙告満',
-      avatar: '馃殞',
+      role: '矿山班车司机',
+      avatar: '🚌',
       accent: 'en-ZA',
-      personality: '鍋ヨ皥锛屽褰撳湴鎯呭喌浜嗗鎸囨帉',
+      personality: '健谈，对当地情况了如指掌',
     },
     context: {
-      setting: '浠庣熆灞卞埌娓╁緱鍜屽厠鐨勮矾涓婏紝4灏忔椂杞︾▼',
-      yourRole: '涓浗宸ョ▼甯堬紝绗竴娆¤蛋杩欐潯璺?,
+      setting: '从矿山到温得和克的路上，4小时车程',
+      yourRole: '中国工程师，第一次走这条路',
     },
     keyVocabulary: [
-      { zh: '闆ㄥ', en: 'rainy season' },
-      { zh: '閲庣敓鍔ㄧ墿', en: 'wildlife' },
-      { zh: '鏉戝簞', en: 'village' },
-      { zh: '璺竟鎽?, en: 'roadside stall' },
-      { zh: '璺喌', en: 'road conditions' },
+      { zh: '雨季', en: 'rainy season' },
+      { zh: '野生动物', en: 'wildlife' },
+      { zh: '村庄', en: 'village' },
+      { zh: '路边摊', en: 'roadside stall' },
+      { zh: '路况', en: 'road conditions' },
     ],
-    systemPrompt: `You are Samuel, a shuttle bus driver who drives between the mine and Windhoek. Chatty, knows everything about the area. English is functional but not your first language 鈥?you speak simply and clearly.
+    systemPrompt: `You are Samuel, a shuttle bus driver who drives between the mine and Windhoek. Chatty, knows everything about the area. English is functional but not your first language — you speak simply and clearly.
 
 Setting: A 4-hour drive from the mine to Windhoek. The Chinese geologist is riding with you.
 
@@ -2490,34 +2501,34 @@ Chat casually about:
 4. Point out interesting spots along the way
 
 After 3 rounds, say: "We stop here for biltong. Best dried meat in Namibia. My cousin's shop. You try!"
-Append JSON evaluation. Very gentle 鈥?this is basic small talk practice.`,
+Append JSON evaluation. Very gentle — this is basic small talk practice.`,
   },
 
   {
     id: 'social-003',
     category: 'social',
-    title: '涓浗鏄ヨ妭浠嬬粛',
-    subtitle: '缁欏鍥藉悓浜嬩粙缁嶆槬鑺傛枃鍖?,
+    title: '中国春节介绍',
+    subtitle: '给外国同事介绍春节文化',
     difficulty: 3,
     estimatedMinutes: 5,
     rounds: 5,
     character: {
       name: 'Emily',
-      role: '婢虫床HR缁忕悊',
-      avatar: '馃Ё',
+      role: '澳洲HR经理',
+      avatar: '🧧',
       accent: 'en-AU',
-      personality: '濂藉銆佸紑鏀撅紝瀵瑰鍏冩枃鍖栨劅鍏磋叮',
+      personality: '好奇、开放，对多元文化感兴趣',
     },
     context: {
-      setting: '鐭垮北椋熷爞鍗堥鏃堕棿锛孍mily鐪嬪埌浣犲湪鍚冮ズ瀛?,
-      yourRole: '涓浗宸ョ▼甯堬紝琚棶鍒颁腑鍥芥柊骞翠範淇?,
+      setting: '矿山食堂午餐时间，Emily看到你在吃饺子',
+      yourRole: '中国工程师，被问到中国新年习俗',
     },
     keyVocabulary: [
-      { zh: '鍐滃巻鏂板勾', en: 'Lunar New Year' },
-      { zh: '绾㈠寘', en: 'red envelope / red packet' },
-      { zh: '鍥㈠渾楗?, en: 'reunion dinner' },
-      { zh: '鐢熻倴', en: 'Chinese zodiac' },
-      { zh: '骞寸硶', en: 'rice cake / sticky cake' },
+      { zh: '农历新年', en: 'Lunar New Year' },
+      { zh: '红包', en: 'red envelope / red packet' },
+      { zh: '团圆饭', en: 'reunion dinner' },
+      { zh: '生肖', en: 'Chinese zodiac' },
+      { zh: '年糕', en: 'rice cake / sticky cake' },
     ],
     systemPrompt: `You are Emily, an Australian HR manager at the mine. Curious about Chinese culture, friendly, open-minded.
 
@@ -2534,44 +2545,44 @@ After 5 rounds, say: "That's fascinating! Next year I'll bring dumplings to the 
 Append JSON evaluation. Focus on whether they can explain Chinese concepts naturally in English.`,
   },
 
-  // ==================== 鍟嗗姟璋堝垽 (business) ====================
+  // ==================== 商务谈判 (business) ====================
   {
     id: 'business-001',
     category: 'business',
-    title: '閽绘帰鍚堝悓鍗曚环璋堝垽',
-    subtitle: '鍜岄捇鎺㈡壙鍖呭晢璋堝悎鍚屼环鏍?,
+    title: '钻探合同单价谈判',
+    subtitle: '和钻探承包商谈合同价格',
     difficulty: 4,
     estimatedMinutes: 6,
     rounds: 5,
     character: {
       name: 'Hendrik Coetzee',
-      role: '閽绘帰鍏徃閿€鍞粡鐞?,
-      avatar: '馃捈',
+      role: '钻探公司销售经理',
+      avatar: '💼',
       accent: 'en-ZA',
-      personality: '绮炬槑銆佹湁搴曠嚎浣嗘効鎰忚皥锛屽吀鍨嬬殑鍗楅潪鍟嗕汉',
+      personality: '精明、有底线但愿意谈，典型的南非商人',
     },
     context: {
-      setting: '鐭垮北浼氳瀹わ紝骞村害閽绘帰鍚堝悓缁害璋堝垽',
-      yourRole: '鐭垮北鏂逛唬琛紝棰勭畻鏈夐檺锛岄渶瑕佸帇浠?0%',
+      setting: '矿山会议室，年度钻探合同续约谈判',
+      yourRole: '矿山方代表，预算有限，需要压价10%',
     },
     keyVocabulary: [
-      { zh: '鍗曚环', en: 'unit rate' },
-      { zh: '姣忕背鎴愭湰', en: 'cost per meter' },
-      { zh: '鐕冩补闄勫姞璐?, en: 'fuel surcharge' },
-      { zh: '鏈€浣庡伐浣滈噺', en: 'minimum meterage commitment' },
-      { zh: '浠樻鏉℃', en: 'payment terms' },
+      { zh: '单价', en: 'unit rate' },
+      { zh: '每米成本', en: 'cost per meter' },
+      { zh: '燃油附加费', en: 'fuel surcharge' },
+      { zh: '最低工作量', en: 'minimum meterage commitment' },
+      { zh: '付款条款', en: 'payment terms' },
     ],
-    systemPrompt: `You are Hendrik Coetzee, sales manager for a drilling contractor. South African businessman 鈥?sharp, experienced, not easily pushed around but reasonable.
+    systemPrompt: `You are Hendrik Coetzee, sales manager for a drilling contractor. South African businessman — sharp, experienced, not easily pushed around but reasonable.
 
 Setting: Annual drilling contract renewal negotiation at the mine office.
 
 The mine wants 10% price reduction. Your current rate is $150/meter.
 
 The negotiation should:
-1. Push back initially ("Our costs have gone up 鈥?fuel, labor, everything. $150 is already tight.")
+1. Push back initially ("Our costs have gone up — fuel, labor, everything. $150 is already tight.")
 2. Probe for more volume ("If you guarantee 15,000 meters instead of 10,000, I can do $142." )
 3. Discuss terms that could sweeten the deal (payment terms, mobilization costs)
-4. Find middle ground 鈥?you can go to $140 if they commit to multi-year
+4. Find middle ground — you can go to $140 if they commit to multi-year
 5. Close the deal professionally
 
 After 5 rounds, say: "Right, $140 per meter for 15,000 meters minimum, 30-day payment. I'll have the contract ready Friday."
@@ -2581,28 +2592,28 @@ Append JSON evaluation. Be tough on negotiation vocabulary and persuasion skills
   {
     id: 'business-002',
     category: 'business',
-    title: '璁惧閲囪喘鐢宠',
-    subtitle: '鍚戦」鐩粡鐞嗙敵璇疯喘涔版柊XRF鍒嗘瀽浠?,
+    title: '设备采购申请',
+    subtitle: '向项目经理申请购买新XRF分析仪',
     difficulty: 3,
     estimatedMinutes: 5,
     rounds: 4,
     character: {
       name: 'Francois',
-      role: '鐭垮北椤圭洰缁忕悊',
-      avatar: '馃搳',
+      role: '矿山项目经理',
+      avatar: '📊',
       accent: 'en-ZA',
-      personality: '绮炬墦缁嗙畻锛岄渶瑕佸厖鍒嗙殑ROI璁鸿瘉',
+      personality: '精打细算，需要充分的ROI论证',
     },
     context: {
-      setting: '椤圭洰缁忕悊鍔炲叕瀹わ紝浣犻渶瑕佺敵璇稢APEX棰勭畻璐拱璁惧',
-      yourRole: '鍦拌川閮ㄩ棬锛岄渶瑕佷竴鍙版柊鐨勪究鎼篨RF锛?45,000锛?,
+      setting: '项目经理办公室，你需要申请CAPEX预算购买设备',
+      yourRole: '地质部门，需要一台新的便携XRF（$45,000）',
     },
     keyVocabulary: [
-      { zh: '璧勬湰鏀嚭', en: 'CAPEX (capital expenditure)' },
-      { zh: '鎶曡祫鍥炴姤鐜?, en: 'ROI (return on investment)' },
-      { zh: '璁惧鑰佸寲', en: 'equipment obsolescence' },
-      { zh: '闄嶄綆澶栧寘鎴愭湰', en: 'reduce outsourcing costs' },
-      { zh: '閲囪喘鐢宠', en: 'purchase requisition' },
+      { zh: '资本支出', en: 'CAPEX (capital expenditure)' },
+      { zh: '投资回报率', en: 'ROI (return on investment)' },
+      { zh: '设备老化', en: 'equipment obsolescence' },
+      { zh: '降低外包成本', en: 'reduce outsourcing costs' },
+      { zh: '采购申请', en: 'purchase requisition' },
     ],
     systemPrompt: `You are Francois, mine project manager. Bottom-line focused, needs solid justification for any CAPEX. Not easy to convince but fair.
 
@@ -2614,43 +2625,43 @@ You should question:
 3. What's the payback period?
 4. Have they looked at alternatives (refurbished, leasing, different brand)?
 
-After 4 rounds, if they make a reasonable case, say: "Alright, draft the CAPEX request. I want the numbers in writing 鈥?current costs vs projected savings. If it stacks up, I'll sign it."
+After 4 rounds, if they make a reasonable case, say: "Alright, draft the CAPEX request. I want the numbers in writing — current costs vs projected savings. If it stacks up, I'll sign it."
 Append JSON evaluation. Evaluate persuasiveness and business vocabulary.`,
   },
 
   {
     id: 'business-003',
     category: 'business',
-    title: '涓庢斂搴滃畼鍛樻矡閫?,
-    subtitle: '鍜岀熆涓氶儴瀹樺憳璁ㄨ鍕樻帰璁稿彲寤舵湡',
+    title: '与政府官员沟通',
+    subtitle: '和矿业部官员讨论勘探许可延期',
     difficulty: 5,
     estimatedMinutes: 7,
     rounds: 6,
     character: {
       name: 'Mr. Ndjoba',
-      role: '绾崇背姣斾簹鐭夸笟閮ㄥ畼鍛?,
-      avatar: '馃彌锔?,
+      role: '纳米比亚矿业部官员',
+      avatar: '🏛️',
       accent: 'en-ZA',
-      personality: '姝ｅ紡銆佹湁绀艰矊浣嗗叕浜嬪叕鍔烇紝鍏虫敞鍚堣',
+      personality: '正式、有礼貌但公事公办，关注合规',
     },
     context: {
-      setting: '鐭夸笟閮ㄥ姙鍏锛屾俯寰楀拰鍏嬶紝鍕樻帰璁稿彲璇佺画鏈熶細璁?,
-      yourRole: '鐭垮北浠ｈ〃锛岀敵璇峰嫎鎺㈣鍙欢鏈熷苟鎻愪緵杩涘睍鎶ュ憡',
+      setting: '矿业部办公室，温得和克，勘探许可证续期会议',
+      yourRole: '矿山代表，申请勘探许可延期并提供进展报告',
     },
     keyVocabulary: [
-      { zh: '鍕樻帰璁稿彲璇?, en: 'exploration license / EPL' },
-      { zh: '寤舵湡鐢宠', en: 'renewal application' },
-      { zh: '鏈€浣庡伐浣滈噺鎵胯', en: 'minimum work commitment' },
-      { zh: '鐜褰卞搷璇勪及', en: 'environmental impact assessment (EIA)' },
-      { zh: '鍚堣鎶ュ憡', en: 'compliance report' },
-      { zh: '褰撳湴闆囦剑', en: 'local employment / local content' },
+      { zh: '勘探许可证', en: 'exploration license / EPL' },
+      { zh: '延期申请', en: 'renewal application' },
+      { zh: '最低工作量承诺', en: 'minimum work commitment' },
+      { zh: '环境影响评估', en: 'environmental impact assessment (EIA)' },
+      { zh: '合规报告', en: 'compliance report' },
+      { zh: '当地雇佣', en: 'local employment / local content' },
     ],
     systemPrompt: `You are Mr. Ndjoba, a senior official at the Namibian Ministry of Mines and Energy. Formal, professional, and by-the-book. You care deeply about compliance, local benefits, and environmental responsibility.
 
 Setting: Your office in Windhoek. The mining company representative is requesting an exploration license renewal.
 
 You should:
-1. Review their progress 鈥?have they met the minimum work commitments?
+1. Review their progress — have they met the minimum work commitments?
 2. Ask about environmental compliance and EIA status
 3. Inquire about local employment and community engagement
 4. Question any gaps or delays in their reporting
@@ -2662,7 +2673,7 @@ Append JSON evaluation. Be strict on formality and professional tone.`,
   },
 ];
 
-// ===== 璇嶆眹鍗＄墖鏄犲皠锛堜粠鍦烘櫙涓彁鍙栵級 =====
+// ===== 词汇卡片映射（从场景中提取） =====
 function generateFlashCards() {
   const cards = [];
   const seen = new Set();
@@ -2690,7 +2701,7 @@ const FLASH_CARDS = generateFlashCards();
 </script>
 <script>
 /* ============================================
-   api.js 鈥?DeepSeek API 灏佽 (OpenAI-compatible)
+   api.js — DeepSeek API 封装 (OpenAI-compatible)
    MineTalk v1.0
    ============================================ */
 
@@ -2699,8 +2710,10 @@ const MODEL = 'deepseek-chat';
 
 const API = {
   /**
-   * 鍙戦€佸璇濊姹?   * @param {Array} messages 鈥?瀵硅瘽鍘嗗彶 [{role, content}, ...]
-   * @param {string} systemPrompt 鈥?绯荤粺鎻愮ず璇嶏紙瑙掕壊璁惧畾+璇勫垎鎸囦护锛?   * @param {string} apiKey
+   * 发送对话请求
+   * @param {Array} messages — 对话历史 [{role, content}, ...]
+   * @param {string} systemPrompt — 系统提示词（角色设定+评分指令）
+   * @param {string} apiKey
    * @returns {Promise<{reply: string, evaluation: object|null}>}
    */
   async chat(messages, systemPrompt, apiKey) {
@@ -2739,7 +2752,7 @@ const API = {
       const data = await response.json();
       const content = data.choices?.[0]?.message?.content || '';
 
-      // 瑙ｆ瀽鍥炲涓殑JSON璇勫垎
+      // 解析回复中的JSON评分
       const { reply, evaluation } = this._parseResponse(content);
 
       return { reply, evaluation };
@@ -2753,7 +2766,7 @@ const API = {
   },
 
   /**
-   * 楠岃瘉API Key鏄惁鏈夋晥
+   * 验证API Key是否有效
    */
   async validateKey(apiKey) {
     try {
@@ -2776,22 +2789,25 @@ const API = {
   },
 
   /**
-   * 瑙ｆ瀽AI鍥炲锛屽垎绂诲璇濆唴瀹瑰拰JSON璇勫垎
+   * 解析AI回复，分离对话内容和JSON评分
    */
   _parseResponse(content) {
     let reply = content;
     let evaluation = null;
 
-    // 灏濊瘯鎻愬彇JSON璇勫垎鍧?    const jsonMatch = content.match(/\{["']eval["']\s*:\s*\{[^}]+\}\s*\}/);
+    // 尝试提取JSON评分块
+    const jsonMatch = content.match(/\{["']eval["']\s*:\s*\{[^}]+\}\s*\}/);
     if (jsonMatch) {
       try {
         evaluation = JSON.parse(jsonMatch[0]).eval;
-        // 浠庡洖澶嶄腑绉婚櫎JSON鍧?        reply = content.replace(jsonMatch[0], '').trim();
+        // 从回复中移除JSON块
+        reply = content.replace(jsonMatch[0], '').trim();
       } catch {
-        // JSON瑙ｆ瀽澶辫触锛屼繚鎸佸師濮嬪洖澶?      }
+        // JSON解析失败，保持原始回复
+      }
     }
 
-    // 涔熷皾璇曞尮閰嶆洿瀹芥澗鐨凧SON
+    // 也尝试匹配更宽松的JSON
     if (!evaluation) {
       const altMatch = content.match(/\{[^}]*"fluency"[^}]*\}/);
       if (altMatch) {
@@ -2812,7 +2828,7 @@ const API = {
 </script>
 <script>
 /* ============================================
-   speech.js 鈥?Web Speech API 灏佽 (STT + TTS)
+   speech.js — Web Speech API 封装 (STT + TTS)
    MineTalk v1.0
    ============================================ */
 
@@ -2825,7 +2841,7 @@ const Speech = {
   onError: null,     // callback(error)
   onStateChange: null, // callback(isListening)
 
-  /** 鍒濆鍖?*/
+  /** 初始化 */
   init() {
     const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     this.isRecognitionSupported = !!SpeechRecognition;
@@ -2834,7 +2850,7 @@ const Speech = {
       this.recognition = new SpeechRecognition();
       this.recognition.continuous = false;
       this.recognition.interimResults = false;
-      this.recognition.lang = 'en-US'; // 榛樿锛屽悗缁彲鍒囨崲
+      this.recognition.lang = 'en-US'; // 默认，后续可切换
       this.recognition.maxAlternatives = 1;
 
       this.recognition.onresult = (event) => {
@@ -2859,7 +2875,7 @@ const Speech = {
     this.isSupported = 'speechSynthesis' in window;
   },
 
-  /** 妫€鏌ヨ闊宠瘑鍒敮鎸?*/
+  /** 检查语音识别支持 */
   checkSupport() {
     return {
       recognition: this.isRecognitionSupported,
@@ -2867,7 +2883,7 @@ const Speech = {
     };
   },
 
-  /** 寮€濮嬪惉 */
+  /** 开始听 */
   startListening(lang) {
     if (!this.recognition) {
       if (this.onError) this.onError('not-supported');
@@ -2878,7 +2894,7 @@ const Speech = {
       this.stopListening();
     }
 
-    // 鏇存柊璇█
+    // 更新语言
     if (lang) {
       this.recognition.lang = lang;
     }
@@ -2894,7 +2910,7 @@ const Speech = {
     }
   },
 
-  /** 鍋滄鍚?*/
+  /** 停止听 */
   stopListening() {
     if (this.recognition && this.isListening) {
       try {
@@ -2908,72 +2924,77 @@ const Speech = {
   },
 
   /**
-   * 鏈楄鏂囨湰
+   * 朗读文本
    * @param {string} text
-   * @param {string} accent 鈥?e.g. 'en-ZA', 'en-AU'
-   * @param {function} onEnd 鈥?鏈楄瀹屾垚鍥炶皟
+   * @param {string} accent — e.g. 'en-ZA', 'en-AU'
+   * @param {function} onEnd — 朗读完成回调
    */
   speak(text, accent, onEnd) {
     if (!this.isSupported) return;
 
-    // 鍏堝彇娑堝綋鍓嶆湕璇?    window.speechSynthesis.cancel();
+    // 先取消当前朗读
+    window.speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(text);
 
-    // 閫夋嫨瀵瑰簲鍙ｉ煶鐨勫０闊?    const voices = window.speechSynthesis.getVoices();
+    // 选择对应口音的声音
+    const voices = window.speechSynthesis.getVoices();
     const voice = this._pickVoice(voices, accent);
     if (voice) utterance.voice = voice;
 
     utterance.lang = accent || 'en-ZA';
-    utterance.rate = 0.9;   // 绋嶆參锛屼究浜庡惉娓?    utterance.pitch = 1.0;
+    utterance.rate = 0.9;   // 稍慢，便于听清
+    utterance.pitch = 1.0;
 
     if (onEnd) {
       utterance.onend = onEnd;
     }
 
-    // Chrome闇€瑕佸欢杩熶竴涓嬫墠鑳芥甯告挱鏀?    setTimeout(() => {
+    // Chrome需要延迟一下才能正常播放
+    setTimeout(() => {
       window.speechSynthesis.speak(utterance);
     }, 50);
   },
 
-  /** 鍋滄鏈楄 */
+  /** 停止朗读 */
   stopSpeaking() {
     if (this.isSupported) {
       window.speechSynthesis.cancel();
     }
   },
 
-  /** 鑾峰彇鍙敤澹伴煶鍒楄〃 */
+  /** 获取可用声音列表 */
   getVoices() {
     if (!this.isSupported) return [];
     return window.speechSynthesis.getVoices();
   },
 
-  /** 鏍规嵁accent鍋忓ソ閫夋嫨澹伴煶 */
+  /** 根据accent偏好选择声音 */
   _pickVoice(voices, accent) {
     if (!voices || voices.length === 0) return null;
 
-    // 鏄犲皠accent鍒拌瑷€浠ｇ爜鍓嶇紑
+    // 映射accent到语言代码前缀
     const langMap = {
-      'en-ZA': 'en-ZA',  // 鍗楅潪
-      'en-AU': 'en-AU',  // 婢虫床
-      'en-GB': 'en-GB',  // 鑻卞浗
-      'en-US': 'en-US',  // 缇庡浗
-      'en-IN': 'en-IN',  // 鍗板害
+      'en-ZA': 'en-ZA',  // 南非
+      'en-AU': 'en-AU',  // 澳洲
+      'en-GB': 'en-GB',  // 英国
+      'en-US': 'en-US',  // 美国
+      'en-IN': 'en-IN',  // 印度
     };
 
     const targetLang = langMap[accent] || 'en-US';
 
-    // 绮剧‘鍖归厤
+    // 精确匹配
     let voice = voices.find(v => v.lang === targetLang);
     if (voice) return voice;
 
-    // 鍓嶇紑鍖归厤
+    // 前缀匹配
     const prefix = targetLang.split('-')[0];
     voice = voices.find(v => v.lang.startsWith(prefix));
     if (voice) return voice;
 
-    // 鍥為€€鍒扮涓€涓嫳鏂囧０闊?    voice = voices.find(v => v.lang.startsWith('en'));
+    // 回退到第一个英文声音
+    voice = voices.find(v => v.lang.startsWith('en'));
     return voice || voices[0];
   },
 };
@@ -2981,7 +3002,8 @@ const Speech = {
 </script>
 <script>
 /* ============================================
-   ui.js 鈥?DOM 娓叉煋鍜屼氦浜?   MineTalk v1.0
+   ui.js — DOM 渲染和交互
+   MineTalk v1.0
    ============================================ */
 
 const UI = {
@@ -2991,7 +3013,7 @@ const UI = {
   trainingMessages: [],
   trainingRound: 0,
 
-  /** ===== 鍒濆鍖栨墍鏈塙I ===== */
+  /** ===== 初始化所有UI ===== */
   init() {
     this._initTabs();
     this._initSettings();
@@ -3001,7 +3023,7 @@ const UI = {
     this.renderFlashCard();
   },
 
-  /** ===== Tab 鍒囨崲 ===== */
+  /** ===== Tab 切换 ===== */
   _initTabs() {
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
@@ -3022,12 +3044,13 @@ const UI = {
     const navItem = document.querySelector(`[data-tab="${tab}"]`);
     if (navItem) navItem.classList.add('active');
 
-    // 鍒囨崲鍒皌ab鏃跺埛鏂板唴瀹?    if (tab === 'home') this.renderHome();
+    // 切换到tab时刷新内容
+    if (tab === 'home') this.renderHome();
     if (tab === 'scenes') this.renderSceneList();
     if (tab === 'cards') { this.renderFlashCardDecks(); this.renderFlashCard(); }
   },
 
-  /** ===== 涓婚〉浠〃鐩?===== */
+  /** ===== 主页仪表盘 ===== */
   renderHome() {
     const state = Storage.load();
     const player = state.player;
@@ -3052,7 +3075,7 @@ const UI = {
       const needed = nextLevel.xp - player.xp;
       document.getElementById('xpNeeded').textContent = `${needed} XP to next level`;
     } else {
-      document.getElementById('xpNeeded').textContent = '馃弳 Max Level!';
+      document.getElementById('xpNeeded').textContent = '🏆 Max Level!';
     }
 
     // Stats
@@ -3073,18 +3096,19 @@ const UI = {
       .filter(([, p]) => p.completed)
       .map(([id]) => id);
 
-    // 姣忓ぉ闅忔満閫?涓湭瀹屾垚鐨勫満鏅?    const pending = allScenes.filter(s => !completed.includes(s.id));
+    // 每天随机选3个未完成的场景
+    const pending = allScenes.filter(s => !completed.includes(s.id));
     const shuffled = [...pending].sort(() => Math.random() - 0.5);
     const challenges = shuffled.slice(0, 3);
 
-    // 濡傛灉涓嶅3涓紝鍔犲叆宸插畬鎴愮殑
+    // 如果不够3个，加入已完成的
     if (challenges.length < 3) {
       const extra = allScenes.filter(s => completed.includes(s.id));
       const extraShuffled = [...extra].sort(() => Math.random() - 0.5);
       challenges.push(...extraShuffled.slice(0, 3 - challenges.length));
     }
 
-    // 瀛樺偍浠婃棩鎸戞垬
+    // 存储今日挑战
     const today = new Date().toISOString().slice(0, 10);
     const stored = Storage.load();
     if (!stored._dailyChallenges || stored._dailyChallenges.date !== today) {
@@ -3108,11 +3132,11 @@ const UI = {
         <div class="challenge-card ${isDone ? 'completed' : ''}"
              data-scene-id="${c.id}"
              onclick="UI.selectScene('${c.id}')">
-          <div class="challenge-check">${isDone ? '鉁? : ''}</div>
+          <div class="challenge-check">${isDone ? '✅' : ''}</div>
           <div class="challenge-info">
             <div class="challenge-title">${c.title}</div>
             <div class="challenge-meta">
-              <span class="challenge-difficulty">${'猸?.repeat(c.difficulty)}</span>
+              <span class="challenge-difficulty">${'⭐'.repeat(c.difficulty)}</span>
               <span class="challenge-category ${catClass}">${c.category}</span>
               <span>${c.estimatedMinutes}min</span>
             </div>
@@ -3140,15 +3164,17 @@ const UI = {
     }).join('');
   },
 
-  /** ===== 鍦烘櫙閫夋嫨 ===== */
+  /** ===== 场景选择 ===== */
   renderSceneList(filter) {
     this._currentFilter = filter || this._currentFilter || 'all';
 
-    // 鏇存柊绛涢€夋寜閽?    document.querySelectorAll('.cat-filter').forEach(b => {
+    // 更新筛选按钮
+    document.querySelectorAll('.cat-filter').forEach(b => {
       b.classList.toggle('active', b.dataset.cat === this._currentFilter);
     });
 
-    // 绛涢€夋寜閽簨浠?    document.querySelectorAll('.cat-filter').forEach(b => {
+    // 筛选按钮事件
+    document.querySelectorAll('.cat-filter').forEach(b => {
       b.onclick = () => {
         this._currentFilter = b.dataset.cat;
         this.renderSceneList(this._currentFilter);
@@ -3175,11 +3201,11 @@ const UI = {
             <div class="scene-title">${s.title}</div>
             <div class="scene-subtitle">${s.subtitle}</div>
             <div class="scene-meta">
-              <span class="challenge-difficulty">${'猸?.repeat(s.difficulty)}</span>
+              <span class="challenge-difficulty">${'⭐'.repeat(s.difficulty)}</span>
               <span class="challenge-category ${catClass}">${s.category}</span>
               <span>${s.estimatedMinutes}min</span>
-              <span>馃懁 ${s.character.name}</span>
-              ${isDone ? `<span class="scene-score">馃弳 ${score}</span>` : ''}
+              <span>👤 ${s.character.name}</span>
+              ${isDone ? `<span class="scene-score">🏆 ${score}</span>` : ''}
             </div>
           </div>
         </div>
@@ -3191,16 +3217,17 @@ const UI = {
     this.currentScene = SCENES.find(s => s.id === sceneId);
     if (!this.currentScene) return;
 
-    // 淇濆瓨鍦烘櫙鍒板綋鍓嶉€夋嫨
+    // 保存场景到当前选择
     const state = Storage.load();
     state._selectedScene = sceneId;
     Storage.save(state);
 
-    // 濡傛灉褰撳墠鍦ㄥ満鏅〉锛屽垏鎹㈠埌璁粌椤?    this.switchTab('training');
+    // 如果当前在场景页，切换到训练页
+    this.switchTab('training');
     this._showTrainingStart();
   },
 
-  /** ===== 璁粌鐣岄潰 ===== */
+  /** ===== 训练界面 ===== */
   _showTrainingStart() {
     const scene = this.currentScene;
 
@@ -3212,17 +3239,18 @@ const UI = {
       document.getElementById('trainAvatar').textContent = scene.character.avatar;
       document.getElementById('trainCharName').textContent = scene.character.name;
       document.getElementById('trainCharRole').textContent =
-        `${scene.character.role} 路 ${scene.context.setting}`;
+        `${scene.character.role} · ${scene.context.setting}`;
       document.getElementById('trainSelectHint').style.display = 'none';
       document.getElementById('trainStartBtnWrap').style.display = 'block';
 
-      // 缁戝畾寮€濮嬫寜閽?      const btn = document.getElementById('btnStartTraining');
+      // 绑定开始按钮
+      const btn = document.getElementById('btnStartTraining');
       const newBtn = btn.cloneNode(true);
       btn.parentNode.replaceChild(newBtn, btn);
       newBtn.onclick = () => UI.startTraining();
     } else {
-      document.getElementById('trainAvatar').textContent = '馃懆鈥嶐煍?;
-      document.getElementById('trainCharName').textContent = '閫夋嫨涓€涓満鏅紑濮?;
+      document.getElementById('trainAvatar').textContent = '👨‍🔧';
+      document.getElementById('trainCharName').textContent = '选择一个场景开始';
       document.getElementById('trainCharRole').textContent = '';
       document.getElementById('trainSelectHint').style.display = 'block';
       document.getElementById('trainStartBtnWrap').style.display = 'none';
@@ -3235,7 +3263,7 @@ const UI = {
       : this.currentScene;
 
     if (!scene) {
-      this.showToast('璇峰厛鍦ㄥ満鏅〉闈㈤€夋嫨涓€涓缁冨満鏅?, 'error');
+      this.showToast('请先在场景页面选择一个训练场景', 'error');
       return;
     }
 
@@ -3251,19 +3279,24 @@ const UI = {
     document.getElementById('trainAvatarActive').textContent = scene.character.avatar;
     document.getElementById('trainCharNameActive').textContent = scene.character.name;
     document.getElementById('trainCharRoleActive').textContent =
-      `${scene.character.role} 路 ${scene.context.setting}`;
+      `${scene.character.role} · ${scene.context.setting}`;
 
-    // 娓叉煋鍥炲悎鎸囩ず鍣?    this._renderRoundIndicator();
-    // 娓呯┖鑱婂ぉ鍖?    document.getElementById('chatArea').innerHTML = '';
-    // 娓叉煋鎻愮ず璇?    this._renderHints();
-    // 缁戝畾楹﹀厠椋?    this._bindMic();
-    // 缁戝畾鎵嬪姩杈撳叆
+    // 渲染回合指示器
+    this._renderRoundIndicator();
+    // 清空聊天区
+    document.getElementById('chatArea').innerHTML = '';
+    // 渲染提示词
+    this._renderHints();
+    // 绑定麦克风
+    this._bindMic();
+    // 绑定手动输入
     this._bindManualInput();
-    // 缁戝畾缁撴潫鎸夐挳
+    // 绑定结束按钮
     document.getElementById('btnEndTraining').onclick = () => this.endTraining();
 
-    // 鍚姩鍦烘櫙锛欰I鍏堣璇?    this._addChatBubble('system', `馃搷 ${scene.context.setting}`);
-    this._addChatBubble('system', `馃懁 浣犵殑瑙掕壊: ${scene.context.yourRole}`);
+    // 启动场景：AI先说话
+    this._addChatBubble('system', `📍 ${scene.context.setting}`);
+    this._addChatBubble('system', `👤 你的角色: ${scene.context.yourRole}`);
     this._startAIRound();
   },
 
@@ -3291,7 +3324,8 @@ const UI = {
     }
     container.innerHTML = scene.keyVocabulary.map(v =>
       `<span class="hint-chip" onclick="UI._useHint('${v.en}')">
-        <span class="zh">${v.zh}</span> 鈫?        <span class="en">${v.en}</span>
+        <span class="zh">${v.zh}</span> →
+        <span class="en">${v.en}</span>
       </span>`
     ).join('');
   },
@@ -3318,13 +3352,13 @@ const UI = {
       const micHint = document.getElementById('micHint');
       if (listening) {
         micBtn.classList.add('listening');
-        micBtn.textContent = '馃敶';
-        micHint.textContent = '姝ｅ湪鑱嗗惉...';
+        micBtn.textContent = '🔴';
+        micHint.textContent = '正在聆听...';
         micHint.classList.add('listening');
       } else {
         micBtn.classList.remove('listening');
-        micBtn.textContent = '馃帳';
-        micHint.textContent = '鐐瑰嚮楹﹀厠椋庡紑濮嬭璇?;
+        micBtn.textContent = '🎤';
+        micHint.textContent = '点击麦克风开始说话';
         micHint.classList.remove('listening');
       }
     };
@@ -3335,19 +3369,19 @@ const UI = {
 
     Speech.onError = (err) => {
       if (err !== 'no-speech') {
-        this.showToast(`璇煶璇嗗埆澶辫触: ${err}`, 'error');
+        this.showToast(`语音识别失败: ${err}`, 'error');
       }
     };
 
     document.getElementById('micBtn').onclick = () => {
       if (!Speech.isRecognitionSupported) {
-        this.showToast('浣犵殑娴忚鍣ㄤ笉鏀寔璇煶璇嗗埆锛岃浣跨敤Chrome娴忚鍣?, 'error');
+        this.showToast('你的浏览器不支持语音识别，请使用Chrome浏览器', 'error');
         return;
       }
       if (Speech.isListening) {
         Speech.stopListening();
       } else {
-        // 浣跨敤鍦烘櫙瑙掕壊鍙ｉ煶鎴栫敤鎴疯缃殑鍙ｉ煶
+        // 使用场景角色口音或用户设置的口音
         const accent = Storage.getSetting('accent') || 'en-ZA';
         Speech.startListening(accent);
       }
@@ -3389,7 +3423,8 @@ const UI = {
     const apiKey = Storage.getSetting('apiKey');
     const accent = Storage.getSetting('accent') || scene.character.accent;
 
-    // 鏄剧ず鍔犺浇鐘舵€?    this._addChatBubble('system', '馃 ...');
+    // 显示加载状态
+    this._addChatBubble('system', '🤔 ...');
 
     try {
       const { reply, evaluation } = await API.chat(
@@ -3398,7 +3433,7 @@ const UI = {
         apiKey
       );
 
-      // 绉婚櫎鍔犺浇姘旀场
+      // 移除加载气泡
       const chatArea = document.getElementById('chatArea');
       chatArea.removeChild(chatArea.lastChild);
 
@@ -3406,14 +3441,16 @@ const UI = {
         this._addChatBubble('ai', reply);
         this.trainingMessages.push({ role: 'assistant', content: reply });
 
-        // TTS鏈楄
+        // TTS朗读
         Speech.speak(reply, accent, () => {
-          // 鏈楄瀹屾垚锛岀敤鎴峰彲浠ュ紑濮嬭璇?        });
+          // 朗读完成，用户可以开始说话
+        });
       }
 
       this.trainingRound++;
 
-      // 妫€鏌ユ槸鍚︾粨鏉?      if (evaluation || this.trainingRound >= this.currentScene.rounds) {
+      // 检查是否结束
+      if (evaluation || this.trainingRound >= this.currentScene.rounds) {
         if (evaluation) {
           this._showEvaluation(evaluation);
         } else {
@@ -3423,19 +3460,19 @@ const UI = {
         this._renderRoundIndicator();
       }
     } catch (e) {
-      // 绉婚櫎鍔犺浇姘旀场
+      // 移除加载气泡
       const chatArea = document.getElementById('chatArea');
       if (chatArea.lastChild) chatArea.removeChild(chatArea.lastChild);
 
       if (e.message === 'NO_API_KEY') {
-        this._addChatBubble('system', '鈿狅笍 璇峰厛鍦ㄨ缃〉闈㈤厤缃瓺eepSeek API Key');
-        this.showToast('璇峰厛閰嶇疆API Key', 'error');
+        this._addChatBubble('system', '⚠️ 请先在设置页面配置DeepSeek API Key');
+        this.showToast('请先配置API Key', 'error');
       } else if (e.message === 'INVALID_API_KEY') {
-        this._addChatBubble('system', '鈿狅笍 API Key鏃犳晥锛岃妫€鏌ヨ缃?);
-        this.showToast('API Key鏃犳晥', 'error');
+        this._addChatBubble('system', '⚠️ API Key无效，请检查设置');
+        this.showToast('API Key无效', 'error');
       } else {
-        this._addChatBubble('system', '鈿狅笍 缃戠粶閿欒锛岃妫€鏌ョ綉缁滆繛鎺ュ悗閲嶈瘯');
-        this.showToast('缃戠粶杩炴帴澶辫触', 'error');
+        this._addChatBubble('system', '⚠️ 网络错误，请检查网络连接后重试');
+        this.showToast('网络连接失败', 'error');
       }
     }
   },
@@ -3443,7 +3480,7 @@ const UI = {
   _addChatBubble(type, text) {
     const area = document.getElementById('chatArea');
     const label = type === 'ai' ? this.currentScene?.character?.name || 'AI' :
-                  type === 'user' ? '浣? : '';
+                  type === 'user' ? '你' : '';
     const div = document.createElement('div');
     div.className = `chat-bubble ${type}`;
     div.innerHTML = `${label ? `<div class="speaker-label">${label}</div>` : ''}${text}`;
@@ -3456,7 +3493,8 @@ const UI = {
       (evaluation.fluency + evaluation.vocabulary + evaluation.grammar) / 3
     );
 
-    // 淇濆瓨鍒版父鎴忕姸鎬?    const sceneId = this.currentScene.id;
+    // 保存到游戏状态
+    const sceneId = this.currentScene.id;
     const state = Storage.load();
     const existing = state.scenes[sceneId] || { completed: false, score: 0, bestScore: 0, attempts: 0 };
 
@@ -3465,7 +3503,7 @@ const UI = {
       (now - (this._trainingStartTime || now)) / 60000
     ) || this.currentScene.estimatedMinutes;
 
-    // 鏇存柊鍦烘櫙杩涘害
+    // 更新场景进度
     Storage.updateSceneProgress(sceneId, {
       completed: true,
       score: totalScore,
@@ -3473,7 +3511,7 @@ const UI = {
       attempts: (existing.attempts || 0) + 1,
     });
 
-    // 杩炲嚮鏇存柊
+    // 连击更新
     const player = state.player;
     const streakResult = Game.updateStreak(player.lastTrainingDate, player.streak);
 
@@ -3481,7 +3519,7 @@ const UI = {
     const isFirstToday = streakResult.isNewDay;
     const xpResult = Game.awardXP(player.xp, Game.calcSceneXP(totalScore, isFirstToday, streakResult.streak));
 
-    // 鏇存柊鐜╁
+    // 更新玩家
     Storage.updatePlayer({
       xp: xpResult.newXp,
       level: xpResult.newLevel,
@@ -3492,12 +3530,14 @@ const UI = {
       bestScore: Math.max(player.bestScore || 0, totalScore),
     });
 
-    // 妫€鏌ユ垚灏?    const newState = Storage.load();
+    // 检查成就
+    const newState = Storage.load();
     const newAchievements = Game.checkAchievements(newState);
 
-    // 鎵嬪姩淇濆瓨鎵€鏈夋垚灏?    newAchievements.forEach(a => Storage.unlockAchievement(a.id));
+    // 手动保存所有成就
+    newAchievements.forEach(a => Storage.unlockAchievement(a.id));
 
-    // 娓叉煋寮圭獥
+    // 渲染弹窗
     this._renderEvalModal(evaluation, totalScore, xpResult, newAchievements);
 
     this.trainingActive = false;
@@ -3512,7 +3552,7 @@ const UI = {
     if (newAchievements.length > 0) {
       achieveHTML = `
         <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
-          <div style="font-size:12px;color:var(--gold);font-weight:700;margin-bottom:6px;">馃弳 鏂版垚灏辫В閿侊紒</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:700;margin-bottom:6px;">🏆 新成就解锁！</div>
           ${newAchievements.map(a => `<span style="font-size:24px;margin:0 4px;" title="${a.name}">${a.icon}</span>`).join('')}
         </div>
       `;
@@ -3522,8 +3562,8 @@ const UI = {
     if (xpResult.leveledUp) {
       levelUpHTML = `
         <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border);">
-          <span style="font-size:28px;">馃帀</span>
-          <div style="font-size:16px;font-weight:900;color:var(--gold);">鍗囩骇浜嗭紒</div>
+          <span style="font-size:28px;">🎉</span>
+          <div style="font-size:16px;font-weight:900;color:var(--gold);">升级了！</div>
           <div style="font-size:14px;color:var(--text-secondary);">${xpResult.newTitle}</div>
         </div>
       `;
@@ -3533,33 +3573,34 @@ const UI = {
     modal.innerHTML = `
       <div class="eval-overlay" onclick="UI.closeEval()">
         <div class="eval-card" onclick="event.stopPropagation()">
-          <div class="eval-title">馃搳 璁粌缁撴灉</div>
+          <div class="eval-title">📊 训练结果</div>
           <div class="eval-scores">
             <div class="eval-score-item">
               <div class="eval-score-circle ${scoreClass(evaluation.fluency)}">${evaluation.fluency}</div>
-              <div class="eval-score-label">娴佸埄搴?/div>
+              <div class="eval-score-label">流利度</div>
             </div>
             <div class="eval-score-item">
               <div class="eval-score-circle ${scoreClass(evaluation.vocabulary)}">${evaluation.vocabulary}</div>
-              <div class="eval-score-label">璇嶆眹</div>
+              <div class="eval-score-label">词汇</div>
             </div>
             <div class="eval-score-item">
               <div class="eval-score-circle ${scoreClass(evaluation.grammar)}">${evaluation.grammar}</div>
-              <div class="eval-score-label">璇硶</div>
+              <div class="eval-score-label">语法</div>
             </div>
           </div>
           <div style="font-size:24px;font-weight:900;color:var(--gold);margin-bottom:12px;">
-            鎬诲垎: ${totalScore}/10
+            总分: ${totalScore}/10
           </div>
           <div class="eval-tip">
-            馃挕 <strong>鏀硅繘寤鸿:</strong> ${evaluation.tip}
+            💡 <strong>改进建议:</strong> ${evaluation.tip}
           </div>
           <div style="color:var(--success);font-weight:700;margin-bottom:8px;">
-            +${xpResult.xpGained} XP 鈿?          </div>
+            +${xpResult.xpGained} XP ⚡
+          </div>
           ${levelUpHTML}
           ${achieveHTML}
           <button class="btn btn-primary btn-block" style="margin-top:16px;" onclick="UI.closeEval()">
-            缁х画璁粌 馃挭
+            继续训练 💪
           </button>
         </div>
       </div>
@@ -3588,22 +3629,22 @@ const UI = {
     this.trainingActive = false;
     Speech.stopSpeaking();
 
-    // 濡傛灉娌℃湁AI璇勫垎锛岀粰涓€涓畝鍗曠殑瀹屾垚鎻愮ず
-    this._addChatBubble('system', '璁粌缁撴潫銆傚湪璁剧疆涓厤缃瓵PI Key浠ヨ幏寰桝I璇勫垎銆?);
+    // 如果没有AI评分，给一个简单的完成提示
+    this._addChatBubble('system', '训练结束。在设置中配置API Key以获得AI评分。');
     setTimeout(() => {
       this._showTrainingStart();
     }, 2000);
   },
 
-  /** ===== 璇嶆眹闂崱 ===== */
+  /** ===== 词汇闪卡 ===== */
   renderFlashCardDecks() {
     const container = document.getElementById('deckSelector');
     const categories = [
-      { key: 'all', label: '馃摝 鍏ㄩ儴' },
-      { key: 'technical', label: '馃敩 鎶€鏈? },
-      { key: 'field', label: '鉀忥笍 鐜板満' },
-      { key: 'social', label: '馃嵑 绀句氦' },
-      { key: 'business', label: '馃搵 鍟嗗姟' },
+      { key: 'all', label: '📦 全部' },
+      { key: 'technical', label: '🔬 技术' },
+      { key: 'field', label: '⛏️ 现场' },
+      { key: 'social', label: '🍺 社交' },
+      { key: 'business', label: '📋 商务' },
     ];
 
     const active = this._activeDeck || 'all';
@@ -3630,7 +3671,7 @@ const UI = {
       : FLASH_CARDS.filter(c => c.category === deck);
 
     if (cards.length === 0) {
-      document.getElementById('cardZh').textContent = '娌℃湁璇嶆眹鍗＄墖';
+      document.getElementById('cardZh').textContent = '没有词汇卡片';
       document.getElementById('cardEn').textContent = '';
       document.getElementById('cardSceneRef').textContent = '';
       document.getElementById('cardProgress').textContent = '0 / 0';
@@ -3642,18 +3683,19 @@ const UI = {
 
     document.getElementById('cardZh').textContent = card.zh;
     document.getElementById('cardEn').textContent = card.en;
-    document.getElementById('cardSceneRef').textContent = `馃搵 ${card.sceneTitle}`;
+    document.getElementById('cardSceneRef').textContent = `📋 ${card.sceneTitle}`;
     document.getElementById('cardProgress').textContent = `${idx + 1} / ${cards.length}`;
 
-    // 缈昏浆鐘舵€侀噸缃?    document.getElementById('flashCard').classList.remove('flipped');
+    // 翻转状态重置
+    document.getElementById('flashCard').classList.remove('flipped');
 
-    // 缁戝畾缈昏浆
+    // 绑定翻转
     const flashCard = document.getElementById('flashCard');
     const newCard = flashCard.cloneNode(true);
     flashCard.parentNode.replaceChild(newCard, flashCard);
     newCard.onclick = () => newCard.classList.toggle('flipped');
 
-    // 缁戝畾鎸夐挳
+    // 绑定按钮
     document.getElementById('btnCardAgain').onclick = () => {
       newCard.classList.remove('flipped');
     };
@@ -3664,15 +3706,16 @@ const UI = {
         lastReview: new Date().toISOString().slice(0, 10),
         reviewCount: (Storage.getVocabProgress(card.id)?.reviewCount || 0) + 1,
       });
-      this.showToast('宸叉帉鎻★紒+5 XP 鉁?, 'xp');
+      this.showToast('已掌握！+5 XP ✨', 'xp');
       Storage.updatePlayer({ xp: Storage.getPlayer().xp + 5 });
 
-      // 涓嬩竴寮?      this._cardIndex = (idx + 1) % cards.length;
+      // 下一张
+      this._cardIndex = (idx + 1) % cards.length;
       this.renderFlashCard();
       this.renderHome();
     };
 
-    // 澶嶄範闃熷垪
+    // 复习队列
     this._renderReviewQueue();
   },
 
@@ -3692,13 +3735,13 @@ const UI = {
     document.getElementById('reviewCount').textContent = reviewCards.length;
     document.getElementById('reviewList').innerHTML = reviewCards.slice(0, 5).map(c =>
       `<div class="review-item">
-        <span>${c.zh} 鈫?<strong>${c.en}</strong></span>
-        <span class="review-count">寰呭涔?/span>
+        <span>${c.zh} → <strong>${c.en}</strong></span>
+        <span class="review-count">待复习</span>
       </div>`
     ).join('');
   },
 
-  /** ===== 璁剧疆 ===== */
+  /** ===== 设置 ===== */
   _initSettings() {
     const state = Storage.load();
     document.getElementById('apiKeyInput').value = state.settings.apiKey || '';
@@ -3707,35 +3750,36 @@ const UI = {
     document.getElementById('hintModeSelect').value = state.settings.showHints ? 'true' : 'false';
     document.getElementById('accentSelect').value = state.settings.accent;
 
-    // API Key 鍙樻洿
+    // API Key 变更
     document.getElementById('apiKeyInput').onchange = (e) => {
       Storage.updateSetting('apiKey', e.target.value.trim());
       this._checkAPIStatus();
     };
 
-    // 鏄电О鍙樻洿
+    // 昵称变更
     document.getElementById('nicknameInput').onchange = (e) => {
-      Storage.updatePlayer({ name: e.target.value.trim() || '鍦拌川灏忕帇' });
+      Storage.updatePlayer({ name: e.target.value.trim() || '地质小王' });
       this.renderHome();
     };
 
-    // 鍙ｉ煶鍙樻洿
+    // 口音变更
     document.getElementById('defaultAccentSelect').onchange = (e) => {
       Storage.updateSetting('accent', e.target.value);
       document.getElementById('accentSelect').value = e.target.value;
     };
 
-    // 鍦烘櫙椤靛彛闊冲彉鏇?    document.getElementById('accentSelect').onchange = (e) => {
+    // 场景页口音变更
+    document.getElementById('accentSelect').onchange = (e) => {
       Storage.updateSetting('accent', e.target.value);
       document.getElementById('defaultAccentSelect').value = e.target.value;
     };
 
-    // 杈呭姪妯″紡
+    // 辅助模式
     document.getElementById('hintModeSelect').onchange = (e) => {
       Storage.updateSetting('showHints', e.target.value === 'true');
     };
 
-    // 瀵煎嚭
+    // 导出
     document.getElementById('btnExportData').onclick = () => {
       const data = Storage.exportData();
       const blob = new Blob([data], { type: 'application/json' });
@@ -3745,10 +3789,10 @@ const UI = {
       a.download = `minetalk-backup-${new Date().toISOString().slice(0,10)}.json`;
       a.click();
       URL.revokeObjectURL(url);
-      this.showToast('鏁版嵁宸插鍑?, 'success');
+      this.showToast('数据已导出', 'success');
     };
 
-    // 瀵煎叆
+    // 导入
     document.getElementById('btnImportData').onclick = () => {
       document.getElementById('importFileInput').click();
     };
@@ -3760,20 +3804,20 @@ const UI = {
       reader.onload = (ev) => {
         const success = Storage.importData(ev.target.result);
         if (success) {
-          this.showToast('鏁版嵁瀵煎叆鎴愬姛锛佸埛鏂伴〉闈㈢敓鏁?, 'success');
+          this.showToast('数据导入成功！刷新页面生效', 'success');
           this._initSettings();
           this.renderHome();
         } else {
-          this.showToast('鏁版嵁鏍煎紡閿欒', 'error');
+          this.showToast('数据格式错误', 'error');
         }
       };
       reader.readAsText(file);
       e.target.value = '';
     };
 
-    // 娓呴櫎
+    // 清除
     document.getElementById('btnResetData').onclick = () => {
-      if (confirm('纭畾瑕佹竻闄ゆ墍鏈夋暟鎹悧锛熸鎿嶄綔涓嶅彲鎭㈠锛?)) {
+      if (confirm('确定要清除所有数据吗？此操作不可恢复！')) {
         Storage.resetAll();
         location.reload();
       }
@@ -3786,23 +3830,23 @@ const UI = {
     const apiKey = Storage.getSetting('apiKey');
     const statusEl = document.getElementById('apiStatus');
     if (!apiKey) {
-      statusEl.innerHTML = '<span style="color:var(--text-muted);">鈿?鏈厤缃瓵PI Key</span>';
+      statusEl.innerHTML = '<span style="color:var(--text-muted);">⚪ 未配置API Key</span>';
       statusEl.className = 'api-status';
       return;
     }
-    statusEl.innerHTML = '<span>馃攧 姝ｅ湪楠岃瘉...</span>';
+    statusEl.innerHTML = '<span>🔄 正在验证...</span>';
     statusEl.className = 'api-status';
     const ok = await API.validateKey(apiKey);
     if (ok) {
-      statusEl.innerHTML = '<span>鉁?API Key 鏈夋晥</span>';
+      statusEl.innerHTML = '<span>✅ API Key 有效</span>';
       statusEl.className = 'api-status ok';
     } else {
-      statusEl.innerHTML = '<span>鉂?API Key 鏃犳晥</span>';
+      statusEl.innerHTML = '<span>❌ API Key 无效</span>';
       statusEl.className = 'api-status err';
     }
   },
 
-  /** ===== 閫氱敤 UI 宸ュ叿 ===== */
+  /** ===== 通用 UI 工具 ===== */
   showToast(msg, type) {
     const container = document.getElementById('toastContainer');
     const toast = document.createElement('div');
@@ -3820,7 +3864,7 @@ const UI = {
     div.className = 'achievement-toast';
     div.innerHTML = `
       <div class="achieve-icon">${achievement.icon}</div>
-      <div class="achieve-label">馃弳 鎴愬氨瑙ｉ攣锛?/div>
+      <div class="achieve-label">🏆 成就解锁！</div>
       <div class="achieve-name">${achievement.name}</div>
     `;
     container.appendChild(div);
@@ -3830,7 +3874,7 @@ const UI = {
   },
 
   _spawnParticles() {
-    const emojis = ['鉁?, '猸?, '馃拵', '馃専', '馃帀', '馃挮', '鈿?, '馃敟'];
+    const emojis = ['✨', '⭐', '💎', '🌟', '🎉', '💫', '⚡', '🔥'];
     for (let i = 0; i < 20; i++) {
       const p = document.createElement('div');
       p.className = 'particle';
@@ -3851,27 +3895,31 @@ const UI = {
 </script>
 <script>
 /* ============================================
-   app.js 鈥?涓绘帶鍒跺櫒锛屽簲鐢ㄥ叆鍙?   MineTalk v1.0
+   app.js — 主控制器，应用入口
+   MineTalk v1.0
    ============================================ */
 
 (function () {
   'use strict';
 
-  /** ===== 搴旂敤鍒濆鍖?===== */
+  /** ===== 应用初始化 ===== */
   function init() {
-    // 鍒濆鍖栬闊冲紩鎿?    Speech.init();
+    // 初始化语音引擎
+    Speech.init();
 
-    // 棰勫姞杞絭oice鍒楄〃锛圕hrome寮傛鍔犺浇锛?    if ('speechSynthesis' in window) {
+    // 预加载voice列表（Chrome异步加载）
+    if ('speechSynthesis' in window) {
       window.speechSynthesis.getVoices();
       window.speechSynthesis.onvoiceschanged = () => {
         window.speechSynthesis.getVoices();
       };
     }
 
-    // 鍒濆鍖朥I
+    // 初始化UI
     UI.init();
 
-    // 妫€鏌ユ槸鍚︽湁閫変腑鐨勫満鏅紙浠庡満鏅〉璺宠浆杩囨潵锛?    const state = Storage.load();
+    // 检查是否有选中的场景（从场景页跳转过来）
+    const state = Storage.load();
     if (state._selectedScene) {
       const scene = SCENES.find(s => s.id === state._selectedScene);
       if (scene) {
@@ -3880,29 +3928,36 @@ const UI = {
       }
     }
 
-    // 鏄剧ず娆㈣繋鎻愮ず锛堥娆′娇鐢級
+    // 显示欢迎提示（首次使用）
     if (!state.player.totalScenesCompleted && !state.settings.apiKey) {
       setTimeout(() => {
-        UI.showToast('馃憢 娆㈣繋锛佽鍏堝湪璁剧疆涓厤缃瓵PI Key', 'info');
+        UI.showToast('👋 欢迎！请先在设置中配置API Key', 'info');
       }, 800);
     }
 
-    // 濡傛灉鏈堿PI Key浣嗘病鏈夊畬鎴愯繃璁粌锛屾彁绀?    if (!state.player.totalScenesCompleted && state.settings.apiKey) {
+    // 如果有API Key但没有完成过训练，提示
+    if (!state.player.totalScenesCompleted && state.settings.apiKey) {
       setTimeout(() => {
-        UI.showToast('馃幆 鍘诲満鏅〉闈㈤€夋嫨绗竴涓缁冨惂锛?, 'info');
+        UI.showToast('🎯 去场景页面选择第一个训练吧！', 'info');
       }, 800);
     }
 
+    // 注册Service Worker (PWA)
     // SW disabled for CDN single-file mode
+    if (false) { //
+      navigator.serviceWorker.register('./sw.js').catch(() => {
+        // 离线缓存注册失败，不影响主功能
+      });
+    }
 
-    console.log('鉀忥笍 MineTalk v1.0 initialized');
-    console.log('馃搳 Scenes loaded:', SCENES.length);
-    console.log('馃摎 Flash cards loaded:', FLASH_CARDS.length);
-    console.log('馃帳 Speech recognition:', Speech.isRecognitionSupported ? 'supported' : 'not supported');
-    console.log('馃攰 Speech synthesis:', Speech.isSupported ? 'supported' : 'not supported');
+    console.log('⛏️ MineTalk v1.0 initialized');
+    console.log('📊 Scenes loaded:', SCENES.length);
+    console.log('📚 Flash cards loaded:', FLASH_CARDS.length);
+    console.log('🎤 Speech recognition:', Speech.isRecognitionSupported ? 'supported' : 'not supported');
+    console.log('🔊 Speech synthesis:', Speech.isSupported ? 'supported' : 'not supported');
   }
 
-  // 椤甸潰鍔犺浇瀹屾垚鍚庡垵濮嬪寲
+  // 页面加载完成后初始化
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
